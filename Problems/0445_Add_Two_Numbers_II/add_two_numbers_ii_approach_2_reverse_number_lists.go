@@ -1,19 +1,16 @@
 package main
+
 // NOTED: this solution is failed, review again
-import 
-(
-    "fmt"
-    "time"
-    //"sort"
+import (
+	"fmt"
+	"time"
+	//"sort"
 )
 
-
 type ListNode struct {
-  Val int
-  Next *ListNode
-
+	Val  int
+	Next *ListNode
 }
-
 
 // LinkedList represents a linked list
 type LinkedList struct{}
@@ -80,68 +77,61 @@ func (ll *LinkedList) PrintList(head *ListNode) {
 	fmt.Printf("%d\n", head.Val)
 }
 
-
 func main() {
-    timeStartWholeProgram := time.Now()
-    testInput := []TestCase{
-        {
-            L1: ListNode{Val: 7, Next: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3}}}} ,
-            L2: ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4}}},
-            Result: `
+	timeStartWholeProgram := time.Now()
+	testInput := []TestCase{
+		{
+			L1: ListNode{Val: 7, Next: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3}}}},
+			L2: ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4}}},
+			Result: `
                 [7,8,0,7]
             `,
-        },
-   {
-            L1: ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3}}},
-            L2: ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4}}},
-            Result: `
+		},
+		{
+			L1: ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3}}},
+			L2: ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 4}}},
+			Result: `
                 [8,0,7]
             `,
-        },
- {
-            L1: ListNode{Val: 0},
-            L2: ListNode{Val: 0},
-            Result: `
+		},
+		{
+			L1: ListNode{Val: 0},
+			L2: ListNode{Val: 0},
+			Result: `
                 [0]
             `,
-        },
+		},
 
-
-   {
-            L1:  ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9}}}}}}} ,
-            L2:  ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9}}}},
-            Result: `
+		{
+			L1: ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9}}}}}}},
+			L2: ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 9}}}},
+			Result: `
             [1, 0, 0 , 0 , 9 , 9 , 9 , 8]               
             `,
-        },
+		},
+	}
+	for count, value := range testInput {
+		fmt.Println("===============")
+		fmt.Println("Test count ", count, "for node", value)
+		// Create a LinkedList instance and call AddTwoLists method to add the two lists
+		ll := &LinkedList{}
+		ll.PrintList(&value.L1)
+		ll.PrintList(&value.L2)
+		ll.AddTwoLists(&value.L1, &value.L2)
 
+		fmt.Println("Solution 1: use reverse number lists approach")
+		timeStart := time.Now()
+		ll.AddTwoLists(&value.L1, &value.L2)
+		timeLapse := time.Since(timeStart)
+		//fmt.Println(">Solution result", result)
+		fmt.Println("Correct result is ", value.Result)
+		fmt.Println("TimeLapse", timeLapse)
 
+	}
 
-      } 
-    for count, value := range testInput {
-        fmt.Println("===============")
-        fmt.Println("Test count ", count, "for node", value)
-        // Create a LinkedList instance and call AddTwoLists method to add the two lists
-	      ll := &LinkedList{}
-        ll.PrintList(&value.L1)
-        ll.PrintList(&value.L2)
-        ll.AddTwoLists(&value.L1, &value.L2)
-
-        fmt.Println("Solution 1: use reverse number lists approach")
-        timeStart := time.Now()
-        ll.AddTwoLists(&value.L1, &value.L2)
-        timeLapse := time.Since(timeStart)
-        //fmt.Println(">Solution result", result)
-        fmt.Println("Correct result is ", value.Result)
-        fmt.Println("TimeLapse", timeLapse)
-
-
-
-    }
-
-    timeLapsedWholeProgram := time.Since(timeStartWholeProgram)
-    fmt.Println("===============")
-    fmt.Println("TimeLapse Whole Program", timeLapsedWholeProgram)
+	timeLapsedWholeProgram := time.Since(timeStartWholeProgram)
+	fmt.Println("===============")
+	fmt.Println("TimeLapse Whole Program", timeLapsedWholeProgram)
 }
 
 type TestCase struct {
@@ -154,7 +144,7 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {{7 0x4000010270} {5 0x40000102a0} 
+Test count  0 for node {{7 0x4000010270} {5 0x40000102a0}
                 [7,8,0,7]
             }
 7 2 4 3
@@ -162,12 +152,12 @@ Test count  0 for node {{7 0x4000010270} {5 0x40000102a0}
 7 8 0 7
 Solution 1: use reverse number lists approach
 1 2
-Correct result is  
+Correct result is
                 [7,8,0,7]
-            
+
 TimeLapse 18.259µs
 ===============
-Test count  1 for node {{2 0x40000102c0} {5 0x40000102e0} 
+Test count  1 for node {{2 0x40000102c0} {5 0x40000102e0}
                 [8,0,7]
             }
 2 4 3
@@ -175,12 +165,12 @@ Test count  1 for node {{2 0x40000102c0} {5 0x40000102e0}
 8 0 7
 Solution 1: use reverse number lists approach
 7
-Correct result is  
+Correct result is
                 [8,0,7]
-            
+
 TimeLapse 9.241µs
 ===============
-Test count  2 for node {{0 <nil>} {0 <nil>} 
+Test count  2 for node {{0 <nil>} {0 <nil>}
                 [0]
             }
 0
@@ -188,22 +178,22 @@ Test count  2 for node {{0 <nil>} {0 <nil>}
 0
 Solution 1: use reverse number lists approach
 0
-Correct result is  
+Correct result is
                 [0]
-            
+
 TimeLapse 9.277µs
 ===============
-Test count  3 for node {{9 0x4000010300} {9 0x4000010360} 
-            [1, 0, 0 , 0 , 9 , 9 , 9 , 8]               
+Test count  3 for node {{9 0x4000010300} {9 0x4000010360}
+            [1, 0, 0 , 0 , 9 , 9 , 9 , 8]
             }
 9 9 9 9 9 9 9
 9 9 9 9
 1 0 0 0 9 9 9 8
 Solution 1: use reverse number lists approach
 1 8
-Correct result is  
-            [1, 0, 0 , 0 , 9 , 9 , 9 , 8]               
-            
+Correct result is
+            [1, 0, 0 , 0 , 9 , 9 , 9 , 8]
+
 TimeLapse 18.073µs
 ===============
 TimeLapse Whole Program 826.472µs

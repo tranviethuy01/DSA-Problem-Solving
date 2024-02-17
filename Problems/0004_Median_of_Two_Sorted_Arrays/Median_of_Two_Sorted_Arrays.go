@@ -3,12 +3,11 @@ package main
 import (
 	"fmt"
 	"math"
+	"sort"
 	"time"
-    "sort"
 )
 
-
-//approach: binary search 
+//approach: binary search
 //Time Complexity: O(log(min(m, n)))
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
@@ -74,40 +73,37 @@ func min(a, b int) int {
 	return b
 }
 
-//===== approach: brute force 
-//Time complexity of O((m + n) log(m + n))
+// ===== approach: brute force
+// Time complexity of O((m + n) log(m + n))
 func findMedianSortedArrays_BruteForce(nums1 []int, nums2 []int) float64 {
-    merged := append(nums1, nums2...)
-    sort.Ints(merged)
-    n := len(merged)
-    if n%2 == 0 {
-        return float64(merged[n/2-1]+merged[n/2]) / 2
-    }
-    return float64(merged[n/2])
+	merged := append(nums1, nums2...)
+	sort.Ints(merged)
+	n := len(merged)
+	if n%2 == 0 {
+		return float64(merged[n/2-1]+merged[n/2]) / 2
+	}
+	return float64(merged[n/2])
 }
 
-
-//===== 
-
+//=====
 
 func main() {
 	timeStartWholeProgram := time.Now()
 	testInput := []TestCase{
 		{
-        Num1: []int{1, 3},
-        Num2: []int{2},
+			Num1: []int{1, 3},
+			Num2: []int{2},
 			Result: `
                 2.00000
             `,
 		},
 		{
-        Num1: []int{1, 2},
-        Num2: []int{3, 4},
+			Num1: []int{1, 2},
+			Num2: []int{3, 4},
 			Result: `
                 2.50000
             `,
 		},
-
 	}
 	for count, value := range testInput {
 		fmt.Println("===============")
@@ -128,7 +124,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 	}
 
 	timeLapsedWholeProgram := time.Since(timeStartWholeProgram)
@@ -142,41 +137,40 @@ type TestCase struct {
 	Result string
 }
 
-
 /*
 
 
 ===============
-Test count  0 for node {[1 3] [2] 
+Test count  0 for node {[1 3] [2]
                 2.00000
             }
 Solution 1: use binary search
 >Solution result 2
-Correct result is  
+Correct result is
                 2.00000
-            
+
 TimeLapse 1.13µs
 Solution 2: use brute force solution
 >Solution result 2
-Correct result is  
+Correct result is
                 2.00000
-            
+
 TimeLapse 3.092µs
 ===============
-Test count  1 for node {[1 2] [3 4] 
+Test count  1 for node {[1 2] [3 4]
                 2.50000
             }
 Solution 1: use binary search
 >Solution result 2.5
-Correct result is  
+Correct result is
                 2.50000
-            
+
 TimeLapse 241ns
 Solution 2: use brute force solution
 >Solution result 2.5
-Correct result is  
+Correct result is
                 2.50000
-            
+
 TimeLapse 1.019µs
 ===============
 TimeLapse Whole Program 400.137µs
