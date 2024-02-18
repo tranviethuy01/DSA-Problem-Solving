@@ -5,6 +5,8 @@ import (
 	"time"
 	"strings"
 )
+//NOTE: need solution to store the result to reuse the computation 
+//If we use brute-force and check whether for every start and end position a substring is a palindrome we have O(n^2) start - end pairs and O(n) palindromic checks. Can we reduce the time for palindromic checks to O(1) by reusing some previous computation.
 
 // approach: Expand From Center
 // Time complexity: O(n^2).
@@ -352,3 +354,6 @@ TimeLapse Whole Program 795.577µs
 
 
 */
+
+//REF
+//https://www.geeksforgeeks.org/longest-palindromic-substring/
