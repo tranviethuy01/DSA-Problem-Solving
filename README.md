@@ -1,4 +1,4 @@
-# DSA Problem Solving
+# DSA Problem Solving for Go Developer
 
 # Further Contact
 For further contact, contact me via
