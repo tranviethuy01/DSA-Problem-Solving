@@ -154,6 +154,38 @@ type TestCase struct {
 
 /*
 
+===============
+Test count  0 for node {[-1 2 1 -4] 1 
+          2
+            }
+Solution 1: use 2 pointer
+>Solution result 2
+Correct result is  
+          2
+            
+TimeLapse 3.074µs
+===============
+Test count  1 for node {[0 0 0] 1 
+         0
+            }
+Solution 1: use 2 pointer
+>Solution result 0
+Correct result is  
+         0
+            
+TimeLapse 852ns
+===============
+Test count  2 for node {[0 0 0] 0 
+          [[0,0,0]]
+            }
+Solution 1: use 2 pointer
+>Solution result 0
+Correct result is  
+          [[0,0,0]]
+            
+TimeLapse 778ns
+===============
+TimeLapse Whole Program 363.905µs
 
 
  */
