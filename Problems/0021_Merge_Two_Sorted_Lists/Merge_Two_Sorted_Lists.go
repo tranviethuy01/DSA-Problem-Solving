@@ -100,14 +100,13 @@ func main() {
 	timeStartWholeProgram := time.Now()
 	testInput := []TestCase{
 		{
-			L1: 	ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: nil}}},
-	L2: ListNode{Val: 1, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4, Next: nil}}},
+			L1: ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: nil}}},
+			L2: ListNode{Val: 1, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4, Next: nil}}},
 			Result: `
 [1,1,2,3,4,4]
 
             `,
 		},
-
 	}
 	for count, value := range testInput {
 		fmt.Println("===============")
@@ -144,23 +143,23 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {{1 0x4000118230} {1 0x4000118250} 
+Test count  0 for node {{1 0x4000118230} {1 0x4000118250}
 [1,1,2,3,4,4]
 
             }
-Solution 1: 
+Solution 1:
 >Solution result &{1 0x400011a160}
-Correct result is  
+Correct result is
 [1,1,2,3,4,4]
 
-            
+
 TimeLapse 889ns
-Solution 2: 
+Solution 2:
 >Solution result &{1 0x40001182a0}
-Correct result is  
+Correct result is
 [1,1,2,3,4,4]
 
-            
+
 TimeLapse 4.926µs
 ===============
 TimeLapse Whole Program 320.793µs

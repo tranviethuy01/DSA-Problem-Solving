@@ -1,12 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"container/heap"
-  "sort"
+	"fmt"
+	"sort"
 	"time"
 )
-//NOTE: doing 
+
+//NOTE: doing
 
 // ListNode represents a node in a linked list.
 type ListNode struct {
@@ -79,32 +80,30 @@ func printList(head *ListNode) {
 
 // mergeKListsBruteForce merges k sorted linked lists into one sorted linked list using brute force.
 func mergeKListsBruteForce(lists []*ListNode) *ListNode {
-    // Collect all values from the linked lists.
-    var values []int
-    for _, list := range lists {
-        for list != nil {
-            values = append(values, list.Val)
-            list = list.Next
-        }
-    }
-    
-    // Sort the collected values.
-    sort.Ints(values)
-    
-    // Construct the sorted linked list.
-    dummy := &ListNode{}
-    current := dummy
-    for _, val := range values {
-        current.Next = &ListNode{Val: val}
-        current = current.Next
-    }
-    
-    return dummy.Next
+	// Collect all values from the linked lists.
+	var values []int
+	for _, list := range lists {
+		for list != nil {
+			values = append(values, list.Val)
+			list = list.Next
+		}
+	}
+
+	// Sort the collected values.
+	sort.Ints(values)
+
+	// Construct the sorted linked list.
+	dummy := &ListNode{}
+	current := dummy
+	for _, val := range values {
+		current.Next = &ListNode{Val: val}
+		current = current.Next
+	}
+
+	return dummy.Next
 }
 
-
-
-//==== 
+//====
 
 //==== approach : priority queue
 
@@ -120,45 +119,45 @@ func (h ListNodeHeap) Less(i, j int) bool { return h[i].Val < h[j].Val }
 func (h ListNodeHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
 
 func (h *ListNodeHeap) Push(x interface{}) {
-    *h = append(*h, x.(*ListNode))
+	*h = append(*h, x.(*ListNode))
 }
 
 func (h *ListNodeHeap) Pop() interface{} {
-    old := *h
-    n := len(old)
-    x := old[n-1]
-    *h = old[0 : n-1]
-    return x
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
 }
 
 // mergeKLists merges k sorted linked lists into one sorted linked list.
 func mergeKLists(lists []*ListNode) *ListNode {
-    if len(lists) == 0 {
-        return nil
-    }
+	if len(lists) == 0 {
+		return nil
+	}
 
-    dummyHead := &ListNode{}
-    dummyTail := dummyHead
+	dummyHead := &ListNode{}
+	dummyTail := dummyHead
 
-    h := &ListNodeHeap{}
-    heap.Init(h)
+	h := &ListNodeHeap{}
+	heap.Init(h)
 
-    for _, head := range lists {
-        if head != nil {
-            heap.Push(h, head)
-        }
-    }
+	for _, head := range lists {
+		if head != nil {
+			heap.Push(h, head)
+		}
+	}
 
-    for h.Len() > 0 {
-        minNode := heap.Pop(h).(*ListNode)
-        if minNode.Next != nil {
-            heap.Push(h, minNode.Next)
-        }
-        dummyTail.Next = minNode
-        dummyTail = dummyTail.Next
-    }
+	for h.Len() > 0 {
+		minNode := heap.Pop(h).(*ListNode)
+		if minNode.Next != nil {
+			heap.Push(h, minNode.Next)
+		}
+		dummyTail.Next = minNode
+		dummyTail = dummyTail.Next
+	}
 
-    return dummyHead.Next
+	return dummyHead.Next
 }
 
 //=====
@@ -221,10 +220,9 @@ func merge(list1Head, list2Head *ListNode) *ListNode {
 	return dummyHead.Next
 }
 
-//==== 
+//====
 
 //=== approach: merge 2 lists at a time
-
 
 // ListNode represents a node in a singly-linked list.
 type ListNode struct {
@@ -283,7 +281,7 @@ func merge(list1Head, list2Head *ListNode) *ListNode {
 	return dummyHead.Next
 }
 
-//=== 
+//===
 
 //approach : Compare K elements One By One
 //Time Complexity: O(nk)
@@ -291,54 +289,54 @@ func merge(list1Head, list2Head *ListNode) *ListNode {
 
 // ListNode represents a node in a singly-linked list.
 type ListNode struct {
-    Val  int
-    Next *ListNode
+	Val  int
+	Next *ListNode
 }
 
 // mergeKLists merges k sorted linked lists into one sorted linked list by comparing k elements one by one.
 func mergeKLists(lists []*ListNode) *ListNode {
-    if len(lists) == 0 {
-        return nil
-    }
+	if len(lists) == 0 {
+		return nil
+	}
 
-    // Initialize the result list and pointers for each input list
-    var result *ListNode
-    pointers := make([]*ListNode, len(lists))
-    for i, list := range lists {
-        pointers[i] = list
-    }
+	// Initialize the result list and pointers for each input list
+	var result *ListNode
+	pointers := make([]*ListNode, len(lists))
+	for i, list := range lists {
+		pointers[i] = list
+	}
 
-    // Iterate until all lists are merged
-    for {
-        // Find the minimum node among the current pointers
-        minNodeIndex := -1
-        for i, node := range pointers {
-            if node != nil && (minNodeIndex == -1 || node.Val < pointers[minNodeIndex].Val) {
-                minNodeIndex = i
-            }
-        }
+	// Iterate until all lists are merged
+	for {
+		// Find the minimum node among the current pointers
+		minNodeIndex := -1
+		for i, node := range pointers {
+			if node != nil && (minNodeIndex == -1 || node.Val < pointers[minNodeIndex].Val) {
+				minNodeIndex = i
+			}
+		}
 
-        // Break the loop if no minimum node is found
-        if minNodeIndex == -1 {
-            break
-        }
+		// Break the loop if no minimum node is found
+		if minNodeIndex == -1 {
+			break
+		}
 
-        // Append the minimum node to the result list
-        if result == nil {
-            result = pointers[minNodeIndex]
-        } else {
-            result.Next = pointers[minNodeIndex]
-            result = result.Next
-        }
+		// Append the minimum node to the result list
+		if result == nil {
+			result = pointers[minNodeIndex]
+		} else {
+			result.Next = pointers[minNodeIndex]
+			result = result.Next
+		}
 
-        // Move the pointer of the selected list to the next node
-        pointers[minNodeIndex] = pointers[minNodeIndex].Next
-    }
+		// Move the pointer of the selected list to the next node
+		pointers[minNodeIndex] = pointers[minNodeIndex].Next
+	}
 
-    return result
+	return result
 }
 
-//==== 
+//====
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -377,8 +375,8 @@ func main() {
 		result := mergeKLists(value.L)
 		timeLapse := time.Since(timeStart)
 		fmt.Println(">Solution result", result)
-    printList(result)
-    fmt.Println("")
+		printList(result)
+		fmt.Println("")
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 	}
@@ -396,6 +394,6 @@ type TestCase struct {
 /*
 
 
-*/
+ */
 //REF
 //
