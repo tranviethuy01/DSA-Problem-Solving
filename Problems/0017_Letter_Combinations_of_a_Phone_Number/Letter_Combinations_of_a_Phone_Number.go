@@ -238,93 +238,93 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {23 
+Test count  0 for node {23
           ["ad","ae","af","bd","be","bf","cd","ce","cf"]
             }
 Solution 1: use Backtracking
 >Solution result [ad ae af bd be bf cd ce cf]
-Correct result is  
+Correct result is
           ["ad","ae","af","bd","be","bf","cd","ce","cf"]
-            
+
 TimeLapse 20.148µs
 Solution 2: use DFS
 >Solution result [ad ae af bd be bf cd ce cf]
-Correct result is  
+Correct result is
           ["ad","ae","af","bd","be","bf","cd","ce","cf"]
-            
+
 TimeLapse 4.241µs
 Solution 3: use BFS
 >Solution result [ad ae af bd be bf cd ce cf]
-Correct result is  
+Correct result is
           ["ad","ae","af","bd","be","bf","cd","ce","cf"]
-            
+
 TimeLapse 4.445µs
 Solution 4: use DP
 >Solution result [ad ae af bd be bf cd ce cf]
-Correct result is  
+Correct result is
           ["ad","ae","af","bd","be","bf","cd","ce","cf"]
-            
+
 TimeLapse 5.649µs
 ===============
-Test count  1 for node { 
+Test count  1 for node {
          []
             }
 Solution 1: use Backtracking
 >Solution result []
-Correct result is  
+Correct result is
          []
-            
+
 TimeLapse 111ns
 Solution 2: use DFS
 >Solution result []
-Correct result is  
+Correct result is
          []
-            
+
 TimeLapse 111ns
 Solution 3: use BFS
 >Solution result []
-Correct result is  
+Correct result is
          []
-            
+
 TimeLapse 111ns
 Solution 4: use DP
 >Solution result []
-Correct result is  
+Correct result is
          []
-            
+
 TimeLapse 92ns
 ===============
-Test count  2 for node {2 
+Test count  2 for node {2
           ["a","b","c"]
             }
 Solution 1: use Backtracking
 >Solution result [a b c]
-Correct result is  
+Correct result is
           ["a","b","c"]
-            
+
 TimeLapse 1.611µs
 Solution 2: use DFS
 >Solution result [a b c]
-Correct result is  
+Correct result is
           ["a","b","c"]
-            
+
 TimeLapse 1.574µs
 Solution 3: use BFS
 >Solution result [a b c]
-Correct result is  
+Correct result is
           ["a","b","c"]
-            
+
 TimeLapse 1.666µs
 Solution 4: use DP
 >Solution result [a b c]
-Correct result is  
+Correct result is
           ["a","b","c"]
-            
+
 TimeLapse 1.926µs
 ===============
 TimeLapse Whole Program 773.146µs
 
 
- */
+*/
 //REF
 //

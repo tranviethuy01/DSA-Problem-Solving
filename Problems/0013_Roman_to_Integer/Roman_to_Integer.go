@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-//approach Straightforward, loop from back to front and using a map
+// approach Straightforward, loop from back to front and using a map
 func romanToInt_MapString(s string) int {
 	romanMap := map[string]int{
 		"M": 1000,
@@ -109,19 +109,18 @@ func romanToInt_FrontToEnd(s string) int {
 
 //=====
 
-//==== another approach : just directly include all the values for roman here 
-
+//==== another approach : just directly include all the values for roman here
 
 func romanToInt_IncludeAll(s string) int {
 
-		romanMap := map[string]int{
-		"I": 1,
-		"V": 5,
-		"X": 10,
-		"L": 50,
-		"C": 100,
-		"D": 500,
-		"M": 1000,
+	romanMap := map[string]int{
+		"I":  1,
+		"V":  5,
+		"X":  10,
+		"L":  50,
+		"C":  100,
+		"D":  500,
+		"M":  1000,
 		"IV": 4,
 		"IX": 9,
 		"XL": 40,
@@ -141,12 +140,12 @@ func romanToInt_IncludeAll(s string) int {
 			result += romanMap[string(s[i])]
 		}
 
-//		if i+1 < len(s) && romanMap[s[i:i+2]] != 0 {
-//			result += romanMap[s[i:i+2]]
-//			i++
-//		} else {
-//			result += romanMap[string(s[i])]
-//		}
+		//		if i+1 < len(s) && romanMap[s[i:i+2]] != 0 {
+		//			result += romanMap[s[i:i+2]]
+		//			i++
+		//		} else {
+		//			result += romanMap[string(s[i])]
+		//		}
 
 	}
 
@@ -154,7 +153,6 @@ func romanToInt_IncludeAll(s string) int {
 }
 
 //====
-
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -207,7 +205,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 		fmt.Println("Solution 4: just include all roman case")
 		timeStart = time.Now()
 		result = romanToInt_IncludeAll(value.S)
@@ -215,8 +212,6 @@ func main() {
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
-
-
 
 	}
 
@@ -233,88 +228,88 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {III 
+Test count  0 for node {III
           3
             }
 Solution 1: use Straightforward approach with map[string]int
 >Solution result 3
-Correct result is  
+Correct result is
           3
-            
+
 TimeLapse 3.834µs
 Solution 2: use Straightforward map[byte]int
 >Solution result 3
-Correct result is  
+Correct result is
           3
-            
+
 TimeLapse 4.148µs
 Solution 3: use front to end approach
 >Solution result 3
-Correct result is  
+Correct result is
           3
-            
+
 TimeLapse 1.834µs
 Solution 4: just include all roman case
 >Solution result 3
-Correct result is  
+Correct result is
           3
-            
+
 TimeLapse 4.407µs
 ===============
-Test count  1 for node {LVIII 
-           58 
+Test count  1 for node {LVIII
+           58
              }
 Solution 1: use Straightforward approach with map[string]int
 >Solution result 58
-Correct result is  
-           58 
-             
+Correct result is
+           58
+
 TimeLapse 1.5µs
 Solution 2: use Straightforward map[byte]int
 >Solution result 58
-Correct result is  
-           58 
-             
+Correct result is
+           58
+
 TimeLapse 1.407µs
 Solution 3: use front to end approach
 >Solution result 58
-Correct result is  
-           58 
-             
+Correct result is
+           58
+
 TimeLapse 1.204µs
 Solution 4: just include all roman case
 >Solution result 58
-Correct result is  
-           58 
-             
+Correct result is
+           58
+
 TimeLapse 2.87µs
 ===============
-Test count  2 for node {MCMXCIV 
-           1994 
+Test count  2 for node {MCMXCIV
+           1994
              }
 Solution 1: use Straightforward approach with map[string]int
 >Solution result 1994
-Correct result is  
-           1994 
-             
+Correct result is
+           1994
+
 TimeLapse 1.629µs
 Solution 2: use Straightforward map[byte]int
 >Solution result 1994
-Correct result is  
-           1994 
-             
+Correct result is
+           1994
+
 TimeLapse 1.537µs
 Solution 3: use front to end approach
 >Solution result 1994
-Correct result is  
-           1994 
-             
+Correct result is
+           1994
+
 TimeLapse 1.444µs
 Solution 4: just include all roman case
 >Solution result 1994
-Correct result is  
-           1994 
-             
+Correct result is
+           1994
+
 TimeLapse 3.778µs
 ===============
 TimeLapse Whole Program 752.439µs

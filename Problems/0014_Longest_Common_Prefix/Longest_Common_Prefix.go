@@ -2,14 +2,14 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"sort"
 	"strings"
+	"time"
 )
 
-//===== approach verital scanning
-//Time Complexity: O(nxm)
-//Space Complexity: O(1)
+// ===== approach verital scanning
+// Time Complexity: O(nxm)
+// Space Complexity: O(1)
 func longestCommonPrefix_VerticalScanning(strs []string) string {
 	if len(strs) == 0 {
 		return ""
@@ -27,12 +27,11 @@ func longestCommonPrefix_VerticalScanning(strs []string) string {
 	return prefix
 }
 
-
 //=====
 
-//===== approach : sort first
-//Time Complexity: O(mlogm + n)
-//Space Complexity: O(1)
+// ===== approach : sort first
+// Time Complexity: O(mlogm + n)
+// Space Complexity: O(1)
 func longestCommonPrefix_WithSort(v []string) string {
 	if len(v) == 0 {
 		return ""
@@ -59,9 +58,7 @@ func min(a, b int) int {
 	return b
 }
 
-
-
-//=====
+// =====
 func main() {
 	timeStartWholeProgram := time.Now()
 	testInput := []TestCase{
@@ -78,7 +75,6 @@ func main() {
            "" 
              `,
 		},
-
 	}
 	for count, value := range testInput {
 		fmt.Println("===============")
@@ -115,36 +111,36 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {[flower flow flight] 
+Test count  0 for node {[flower flow flight]
           "fl"
             }
 Solution 1: use Straightforward approach with map[string]int
 >Solution result fl
-Correct result is  
+Correct result is
           "fl"
-            
+
 TimeLapse 1.056µs
 Solution 2: use Straightforward map[byte]int
 >Solution result fl
-Correct result is  
+Correct result is
           "fl"
-            
+
 TimeLapse 6.055µs
 ===============
-Test count  1 for node {[dog racecar car] 
-           "" 
+Test count  1 for node {[dog racecar car]
+           ""
              }
 Solution 1: use Straightforward approach with map[string]int
->Solution result 
-Correct result is  
-           "" 
-             
+>Solution result
+Correct result is
+           ""
+
 TimeLapse 222ns
 Solution 2: use Straightforward map[byte]int
->Solution result 
-Correct result is  
-           "" 
-             
+>Solution result
+Correct result is
+           ""
+
 TimeLapse 1.074µs
 ===============
 TimeLapse Whole Program 408.809µs

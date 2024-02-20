@@ -2,60 +2,57 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"sort"
 	"time"
-  "math"
 )
 
 // approach: 2 pointer
-//Time complexity: O(nlogn)
-//Space complexity: O(1)
+// Time complexity: O(nlogn)
+// Space complexity: O(1)
 func threeSumClosest_2Pointer(nums []int, target int) int {
-    // Sort the array
-    sort.Ints(nums)
-    
-    // Initialize variables for result and minimum difference
-    closestSum := math.MaxInt32
-    minDiff := math.MaxInt32
-    
-    // Iterate over the array
-    for i := 0; i < len(nums)-2; i++ {
-        left, right := i+1, len(nums)-1
-        
-        // Use two pointers approach
-        for left < right {
-            sum := nums[i] + nums[left] + nums[right]
-            diff := abs(sum - target)
-            
-            // Update closestSum and minDiff if current sum is closer to target
-            if diff < minDiff {
-                closestSum = sum
-                minDiff = diff
-            }
-            
-            // Move pointers based on the comparison with target
-            if sum < target {
-                left++
-            } else if sum > target {
-                right--
-            } else {
-                return sum // Exact match found
-            }
-        }
-    }
-    
-    return closestSum
-}
+	// Sort the array
+	sort.Ints(nums)
 
+	// Initialize variables for result and minimum difference
+	closestSum := math.MaxInt32
+	minDiff := math.MaxInt32
+
+	// Iterate over the array
+	for i := 0; i < len(nums)-2; i++ {
+		left, right := i+1, len(nums)-1
+
+		// Use two pointers approach
+		for left < right {
+			sum := nums[i] + nums[left] + nums[right]
+			diff := abs(sum - target)
+
+			// Update closestSum and minDiff if current sum is closer to target
+			if diff < minDiff {
+				closestSum = sum
+				minDiff = diff
+			}
+
+			// Move pointers based on the comparison with target
+			if sum < target {
+				left++
+			} else if sum > target {
+				right--
+			} else {
+				return sum // Exact match found
+			}
+		}
+	}
+
+	return closestSum
+}
 
 func abs(x int) int {
-    if x < 0 {
-        return -x
-    }
-    return x
+	if x < 0 {
+		return -x
+	}
+	return x
 }
-
-
 
 //==== hash map approach
 //NOTE: need to check later
@@ -63,11 +60,11 @@ func abs(x int) int {
 func threeSumClosest_HashMap(nums []int, target int) int {
     // Sort the array
     sort.Ints(nums)
-    
+
     // Initialize variables for result and minimum difference
     closestSum := math.MaxInt32
     minDiff := math.MaxInt32
-    
+
     // Iterate over the array
     for i := 0; i < len(nums)-2; i++ {
         // Use hash map to store differences between target and sum of two elements
@@ -85,14 +82,13 @@ func threeSumClosest_HashMap(nums []int, target int) int {
             diffMap[nums[j]] = j
         }
     }
-    
+
     return closestSum
 }
 
 */
 
 //====
-
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -130,16 +126,16 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-    /*
-		fmt.Println("Solution 2: use hash map")
-		timeStart = time.Now()
-		result = threeSumClosest_HashMap(value.Nums, value.Target)
-		timeLapse = time.Since(timeStart)
-		fmt.Println(">Solution result", result)
-		fmt.Println("Correct result is ", value.Result)
-		fmt.Println("TimeLapse", timeLapse)
-    */
-  }
+		/*
+			fmt.Println("Solution 2: use hash map")
+			timeStart = time.Now()
+			result = threeSumClosest_HashMap(value.Nums, value.Target)
+			timeLapse = time.Since(timeStart)
+			fmt.Println(">Solution result", result)
+			fmt.Println("Correct result is ", value.Result)
+			fmt.Println("TimeLapse", timeLapse)
+		*/
+	}
 
 	timeLapsedWholeProgram := time.Since(timeStartWholeProgram)
 	fmt.Println("===============")
@@ -155,39 +151,39 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {[-1 2 1 -4] 1 
+Test count  0 for node {[-1 2 1 -4] 1
           2
             }
 Solution 1: use 2 pointer
 >Solution result 2
-Correct result is  
+Correct result is
           2
-            
+
 TimeLapse 3.074µs
 ===============
-Test count  1 for node {[0 0 0] 1 
+Test count  1 for node {[0 0 0] 1
          0
             }
 Solution 1: use 2 pointer
 >Solution result 0
-Correct result is  
+Correct result is
          0
-            
+
 TimeLapse 852ns
 ===============
-Test count  2 for node {[0 0 0] 0 
+Test count  2 for node {[0 0 0] 0
           [[0,0,0]]
             }
 Solution 1: use 2 pointer
 >Solution result 0
-Correct result is  
+Correct result is
           [[0,0,0]]
-            
+
 TimeLapse 778ns
 ===============
 TimeLapse Whole Program 363.905µs
 
 
- */
+*/
 //REF
 //

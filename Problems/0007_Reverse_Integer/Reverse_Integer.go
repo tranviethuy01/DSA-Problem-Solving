@@ -92,21 +92,19 @@ func main() {
             `,
 		},
 		{
-			N:2147483641,
+			N: 2147483641,
 			Result: `
       1463847412
 
             `,
 		},
 		{
-			N:2147483643,
+			N: 2147483643,
 			Result: `
       => 3463847412 =>overflow case => should result 0
 
             `,
 		},
-
-
 	}
 	for count, value := range testInput {
 		fmt.Println("===============")
@@ -142,90 +140,90 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {123 
+Test count  0 for node {123
           321
             }
 Solution 1: use straightforward iterative approach
 >Solution result 321
-Correct result is  
+Correct result is
           321
-            
+
 TimeLapse 611ns
 Solution 2: use Bture Force
 >Solution result 321
-Correct result is  
+Correct result is
           321
-            
+
 TimeLapse 333ns
 ===============
-Test count  1 for node {-123 
+Test count  1 for node {-123
           -321
             }
 Solution 1: use straightforward iterative approach
 >Solution result -321
-Correct result is  
+Correct result is
           -321
-            
+
 TimeLapse 167ns
 Solution 2: use Bture Force
 >Solution result -321
-Correct result is  
+Correct result is
           -321
-            
+
 TimeLapse 166ns
 ===============
-Test count  2 for node {120 
+Test count  2 for node {120
               21
             }
 Solution 1: use straightforward iterative approach
 >Solution result 21
-Correct result is  
+Correct result is
               21
-            
+
 TimeLapse 186ns
 Solution 2: use Bture Force
 >Solution result 21
-Correct result is  
+Correct result is
               21
-            
+
 TimeLapse 148ns
 ===============
-Test count  3 for node {2147483641 
+Test count  3 for node {2147483641
       1463847412
 
             }
 Solution 1: use straightforward iterative approach
 >Solution result 1463847412
-Correct result is  
+Correct result is
       1463847412
 
-            
+
 TimeLapse 241ns
 Solution 2: use Bture Force
 >Solution result 1463847412
-Correct result is  
+Correct result is
       1463847412
 
-            
+
 TimeLapse 185ns
 ===============
-Test count  4 for node {2147483643 
+Test count  4 for node {2147483643
       => 3463847412 =>overflow case => should result 0
 
             }
 Solution 1: use straightforward iterative approach
 >Solution result 0
-Correct result is  
+Correct result is
       => 3463847412 =>overflow case => should result 0
 
-            
+
 TimeLapse 222ns
 Solution 2: use Bture Force
 >Solution result 0
-Correct result is  
+Correct result is
       => 3463847412 =>overflow case => should result 0
 
-            
+
 TimeLapse 204ns
 ===============
 TimeLapse Whole Program 699.963µs
