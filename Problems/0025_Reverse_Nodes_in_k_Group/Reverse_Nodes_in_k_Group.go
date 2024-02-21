@@ -241,7 +241,8 @@ func main() {
 		printLinkedList(result)
 		fmt.Println("TimeLapse", timeLapse)
 
-		fmt.Println("Solution 2: ")
+		fmt.Println("Solution 2: (note: the test value has change because of the pointer value, need to update the test value again)")
+		printLinkedList(&value.Head)
 		timeStart = time.Now()
 		result = reverseKGroup_Approach2(&value.Head, value.K)
 		timeLapse = time.Since(timeStart)
@@ -265,33 +266,33 @@ type TestCase struct {
 
 /*
 
-
 ===============
-Test count  0 for node {{1 0x4000010250} 2
+Test count  0 for node {{1 0x400009e230} 2
       [2,1,4,3,5]
             }
 Solution 1:
->Solution result &{2 0x4000072150}
+>Solution result &{2 0x40000a0150}
 2 -> 1 -> 4 -> 3 -> 5 -> nil
 Correct result is
       [2,1,4,3,5]
 
 2 -> 1 -> 4 -> 3 -> 5 -> nil
-TimeLapse 1.093µs
+TimeLapse 1.055µs
 Solution 2:
->Solution result &{4 0x4000072150}
+1 -> 4 -> 3 -> 5 -> nil
+>Solution result &{4 0x40000a0150}
 4 -> 1 -> 5 -> 3 -> nil
 Correct result is
       [2,1,4,3,5]
 
-TimeLapse 796ns
+TimeLapse 982ns
 ===============
-Test count  1 for node {{1 0x4000010290} 3
+Test count  1 for node {{1 0x400009e270} 3
 [3,2,1,4,5]
 
             }
 Solution 1:
->Solution result &{3 0x4000010290}
+>Solution result &{3 0x400009e270}
 3 -> 2 -> 1 -> 4 -> 5 -> nil
 Correct result is
 [3,2,1,4,5]
@@ -300,14 +301,15 @@ Correct result is
 3 -> 2 -> 1 -> 4 -> 5 -> nil
 TimeLapse 204ns
 Solution 2:
->Solution result &{5 0x40000102b0}
+1 -> 4 -> 5 -> nil
+>Solution result &{5 0x400009e290}
 5 -> 4 -> 1 -> nil
 Correct result is
 [3,2,1,4,5]
 
 
-TimeLapse 204ns
+TimeLapse 185ns
 ===============
-TimeLapse Whole Program 681.039µs
+TimeLapse Whole Program 800.843µs
 
 */
