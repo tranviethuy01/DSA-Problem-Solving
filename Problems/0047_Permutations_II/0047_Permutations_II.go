@@ -56,27 +56,27 @@ Additionally, we have additional space for the output result, which can contain 
 Therefore, the overall space complexity is O(n! * n).
 */
 func permuteUnique_DFS(nums []int) [][]int {
-    var result [][]int
-    var path []int
-    var visited = make([]bool, len(nums))
-    sort.Ints(nums)
-    dfs(nums, &result, path, visited)
-    return result
+	var result [][]int
+	var path []int
+	var visited = make([]bool, len(nums))
+	sort.Ints(nums)
+	dfs(nums, &result, path, visited)
+	return result
 }
 
 func dfs(nums []int, result *[][]int, path []int, visited []bool) {
-    if len(path) == len(nums) {
-        *result = append(*result, append([]int{}, path...))
-        return
-    }
-    for i := 0; i < len(nums); i++ {
-        if visited[i] || (i > 0 && nums[i] == nums[i-1] && !visited[i-1]) {
-            continue
-        }
-        visited[i] = true
-        dfs(nums, result, append(path, nums[i]), visited)
-        visited[i] = false
-    }
+	if len(path) == len(nums) {
+		*result = append(*result, append([]int{}, path...))
+		return
+	}
+	for i := 0; i < len(nums); i++ {
+		if visited[i] || (i > 0 && nums[i] == nums[i-1] && !visited[i-1]) {
+			continue
+		}
+		visited[i] = true
+		dfs(nums, result, append(path, nums[i]), visited)
+		visited[i] = false
+	}
 }
 
 // approach BFS
@@ -96,25 +96,25 @@ In summary, the provided BFS solution has a time complexity of O(n! * n) and a s
 */
 
 func permuteUnique_BFS(nums []int) [][]int {
-    sort.Ints(nums)
-    result := [][]int{{}}
-    for _, num := range nums {
-        nextLevel := [][]int{}
-        for _, perm := range result {
-            for i := 0; i <= len(perm); i++ {
-                if i > 0 && perm[i-1] == num {
-                    break
-                }
-                nextPerm := make([]int, len(perm)+1)
-                copy(nextPerm[:i], perm[:i])
-                nextPerm[i] = num
-                copy(nextPerm[i+1:], perm[i:])
-                nextLevel = append(nextLevel, nextPerm)
-            }
-        }
-        result = nextLevel
-    }
-    return result
+	sort.Ints(nums)
+	result := [][]int{{}}
+	for _, num := range nums {
+		nextLevel := [][]int{}
+		for _, perm := range result {
+			for i := 0; i <= len(perm); i++ {
+				if i > 0 && perm[i-1] == num {
+					break
+				}
+				nextPerm := make([]int, len(perm)+1)
+				copy(nextPerm[:i], perm[:i])
+				nextPerm[i] = num
+				copy(nextPerm[i+1:], perm[i:])
+				nextLevel = append(nextLevel, nextPerm)
+			}
+		}
+		result = nextLevel
+	}
+	return result
 }
 
 /*
@@ -181,34 +181,29 @@ Therefore, the overall space complexity is O(n! * n).
 In summary, the time complexity of the provided solution is O(n! * n * log(n)), and the space complexity is O(n! * n).
 */
 
-
 func permuteUnique_BruteForce(nums []int) [][]int {
-    var result [][]int
-    var visited = make([]bool, len(nums))
-    var current []int
-    sort.Ints(nums)
-    generatePermutations(nums, visited, current, &result)
-    return result
+	var result [][]int
+	var visited = make([]bool, len(nums))
+	var current []int
+	sort.Ints(nums)
+	generatePermutations(nums, visited, current, &result)
+	return result
 }
 
 func generatePermutations(nums []int, visited []bool, current []int, result *[][]int) {
-    if len(current) == len(nums) {
-        *result = append(*result, append([]int{}, current...))
-        return
-    }
-    for i := 0; i < len(nums); i++ {
-        if visited[i] || (i > 0 && nums[i] == nums[i-1] && !visited[i-1]) {
-            continue
-        }
-        visited[i] = true
-        generatePermutations(nums, visited, append(current, nums[i]), result)
-        visited[i] = false
-    }
+	if len(current) == len(nums) {
+		*result = append(*result, append([]int{}, current...))
+		return
+	}
+	for i := 0; i < len(nums); i++ {
+		if visited[i] || (i > 0 && nums[i] == nums[i-1] && !visited[i-1]) {
+			continue
+		}
+		visited[i] = true
+		generatePermutations(nums, visited, append(current, nums[i]), result)
+		visited[i] = false
+	}
 }
-
-
-
-
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -255,7 +250,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 		fmt.Println("Solution 4: BruteForce")
 		timeStart = time.Now()
 		result = permuteUnique_BruteForce(value.Nums)
@@ -263,7 +257,6 @@ func main() {
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
-
 
 	}
 
@@ -281,64 +274,64 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {[1 1 2] 
+Test count  0 for node {[1 1 2]
 [[1,1,2],[1,2,1],[2,1,1]]
             }
 Solution 1: Backtrack
 >Solution result [[1 1 2] [1 2 1] [2 1 1]]
-Correct result is  
+Correct result is
 [[1,1,2],[1,2,1],[2,1,1]]
-            
+
 TimeLapse 6.444µs
 Solution 2: DFS
 >Solution result [[1 1 2] [1 2 1] [2 1 1]]
-Correct result is  
+Correct result is
 [[1,1,2],[1,2,1],[2,1,1]]
-            
+
 TimeLapse 4.277µs
 Solution 3: BFS
 >Solution result [[2 1 1] [1 2 1] [1 1 2]]
-Correct result is  
+Correct result is
 [[1,1,2],[1,2,1],[2,1,1]]
-            
+
 TimeLapse 3.426µs
 Solution 4: BruteForce
 >Solution result [[1 1 2] [1 2 1] [2 1 1]]
-Correct result is  
+Correct result is
 [[1,1,2],[1,2,1],[2,1,1]]
-            
+
 TimeLapse 4.333µs
 ===============
-Test count  1 for node {[1 2 3] 
+Test count  1 for node {[1 2 3]
 			[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
             }
 Solution 1: Backtrack
 >Solution result [[1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 1 2] [3 2 1]]
-Correct result is  
+Correct result is
 			[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 11.63µs
 Solution 2: DFS
 >Solution result [[1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 1 2] [3 2 1]]
-Correct result is  
+Correct result is
 			[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 4.352µs
 Solution 3: BFS
 >Solution result [[3 2 1] [2 3 1] [2 1 3] [3 1 2] [1 3 2] [1 2 3]]
-Correct result is  
+Correct result is
 			[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 3.277µs
 Solution 4: BruteForce
 >Solution result [[1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 1 2] [3 2 1]]
-Correct result is  
+Correct result is
 			[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 4.222µs
 ===============
 TimeLapse Whole Program 712.881µs
 
- */
+*/
 //REF
 //

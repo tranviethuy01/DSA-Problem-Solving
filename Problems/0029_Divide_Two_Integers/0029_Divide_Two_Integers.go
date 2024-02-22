@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-"math"
+	"math"
 	"time"
 )
 
@@ -12,69 +12,64 @@ import (
 //
 
 func divide(dividend int, divisor int) int {
-    if dividend == math.MinInt32 && divisor == -1 {
-        return math.MaxInt32
-    }
+	if dividend == math.MinInt32 && divisor == -1 {
+		return math.MaxInt32
+	}
 
-    negative := false
-    if (dividend < 0 && divisor > 0) || (dividend > 0 && divisor < 0) {
-        negative = true
-    }
+	negative := false
+	if (dividend < 0 && divisor > 0) || (dividend > 0 && divisor < 0) {
+		negative = true
+	}
 
-    dividend = int(math.Abs(float64(dividend)))
-    divisor = int(math.Abs(float64(divisor)))
+	dividend = int(math.Abs(float64(dividend)))
+	divisor = int(math.Abs(float64(divisor)))
 
-    quotient := 0
-    for dividend >= divisor {
-        temp := divisor
-        multiple := 1
-        for dividend >= (temp << 1) {
-            temp <<= 1
-            multiple <<= 1
-        }
-        dividend -= temp
-        quotient += multiple
-    }
+	quotient := 0
+	for dividend >= divisor {
+		temp := divisor
+		multiple := 1
+		for dividend >= (temp << 1) {
+			temp <<= 1
+			multiple <<= 1
+		}
+		dividend -= temp
+		quotient += multiple
+	}
 
-    if negative {
-        return -quotient
-    }
-    return quotient
+	if negative {
+		return -quotient
+	}
+	return quotient
 }
-
 
 // approach: repeatedly subtracts the divisor from the dividend until the dividend becomes less than the divisor
 //Time Complexity: O(log(dividend/divisor))
 //Space Complexity: O(1)
 
 func divide_RepeatedlySubtract(dividend int, divisor int) int {
-    if dividend == math.MinInt32 && divisor == -1 {
-        return math.MaxInt32
-    }
+	if dividend == math.MinInt32 && divisor == -1 {
+		return math.MaxInt32
+	}
 
-    negative := false
-    if (dividend < 0 && divisor > 0) || (dividend > 0 && divisor < 0) {
-        negative = true
-    }
+	negative := false
+	if (dividend < 0 && divisor > 0) || (dividend > 0 && divisor < 0) {
+		negative = true
+	}
 
-    dividend = int(math.Abs(float64(dividend)))
-    divisor = int(math.Abs(float64(divisor)))
+	dividend = int(math.Abs(float64(dividend)))
+	divisor = int(math.Abs(float64(divisor)))
 
-    quotient := 0
-    for dividend >= divisor {
-        dividend -= divisor
-        quotient++
-    }
+	quotient := 0
+	for dividend >= divisor {
+		dividend -= divisor
+		quotient++
+	}
 
-    if negative {
-        return -quotient
-    }
-    return quotient
+	if negative {
+		return -quotient
+	}
+	return quotient
 }
-
-
-
-
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -82,16 +77,16 @@ func main() {
 	testInput := []TestCase{
 
 		{
-	Dividend: 10,
-	Divisor: 3,
+			Dividend: 10,
+			Divisor:  3,
 			Result: `
 3
 
             `,
 		},
 		{
-Dividend: 7,
-Divisor : -3, 
+			Dividend: 7,
+			Divisor:  -3,
 			Result: `
       -2
             `,
@@ -125,7 +120,7 @@ Divisor : -3,
 
 type TestCase struct {
 	Dividend int
-	Divisor int
+	Divisor  int
 	Result   string
 }
 
@@ -133,39 +128,39 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {10 3 
+Test count  0 for node {10 3
 3
 
             }
 Solution 1: 2 pointer
 >Solution result 3
-Correct result is  
+Correct result is
 3
 
-            
+
 TimeLapse 685ns
 Solution 2: brute force
 >Solution result 3
-Correct result is  
+Correct result is
 3
 
-            
+
 TimeLapse 796ns
 ===============
-Test count  1 for node {7 -3 
+Test count  1 for node {7 -3
       -2
             }
 Solution 1: 2 pointer
 >Solution result -2
-Correct result is  
+Correct result is
       -2
-            
+
 TimeLapse 167ns
 Solution 2: brute force
 >Solution result -2
-Correct result is  
+Correct result is
       -2
-            
+
 TimeLapse 148ns
 ===============
 TimeLapse Whole Program 393.099µs

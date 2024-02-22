@@ -397,116 +397,116 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {barfoothefoobarman [foo bar] 
+Test count  0 for node {barfoothefoobarman [foo bar]
 [0,9]
 
             }
 Solution 1: Sliding Window
 >Solution result [0 9]
-Correct result is  
+Correct result is
 [0,9]
 
-            
+
 TimeLapse 6.537µs
 Solution 2: DP
 >Solution result [0 9]
-Correct result is  
+Correct result is
 [0,9]
 
-            
+
 TimeLapse 6.315µs
 Solution 3: DFS
 >Solution result [9 0]
-Correct result is  
+Correct result is
 [0,9]
 
-            
+
 TimeLapse 5.444µs
 Solution 4: BFS. NOTE: this solution is not complete, need check code again
 >Solution result [3]
-Correct result is  
+Correct result is
 [0,9]
 
-            
+
 TimeLapse 7.296µs
 Solution 5: Memoization
 >Solution result [0 9]
-Correct result is  
+Correct result is
 [0,9]
 
-            
+
 TimeLapse 4.278µs
 ===============
-Test count  1 for node {wordgoodgoodgoodbestword [word good best word] 
+Test count  1 for node {wordgoodgoodgoodbestword [word good best word]
       []
             }
 Solution 1: Sliding Window
 >Solution result []
-Correct result is  
+Correct result is
       []
-            
+
 TimeLapse 2.834µs
 Solution 2: DP
 >Solution result []
-Correct result is  
+Correct result is
       []
-            
+
 TimeLapse 5.314µs
 Solution 3: DFS
 >Solution result []
-Correct result is  
+Correct result is
       []
-            
+
 TimeLapse 9.574µs
 Solution 4: BFS. NOTE: this solution is not complete, need check code again
 >Solution result []
-Correct result is  
+Correct result is
       []
-            
+
 TimeLapse 34.129µs
 Solution 5: Memoization
 >Solution result []
-Correct result is  
+Correct result is
       []
-            
+
 TimeLapse 3.481µs
 ===============
-Test count  2 for node {barfoofoobarthefoobarman [bar foo the] 
+Test count  2 for node {barfoofoobarthefoobarman [bar foo the]
       [6,9,12]
             }
 Solution 1: Sliding Window
 >Solution result [6 9 12]
-Correct result is  
+Correct result is
       [6,9,12]
-            
+
 TimeLapse 7.778µs
 Solution 2: DP
 >Solution result [6 9 12]
-Correct result is  
+Correct result is
       [6,9,12]
-            
+
 TimeLapse 8.296µs
 Solution 3: DFS
 >Solution result [9 6 12]
-Correct result is  
+Correct result is
       [6,9,12]
-            
+
 TimeLapse 6µs
 Solution 4: BFS. NOTE: this solution is not complete, need check code again
 >Solution result [12]
-Correct result is  
+Correct result is
       [6,9,12]
-            
+
 TimeLapse 11.777µs
 Solution 5: Memoization
 >Solution result [6 9 12]
-Correct result is  
+Correct result is
       [6,9,12]
-            
+
 TimeLapse 7.074µs
 ===============
 TimeLapse Whole Program 1.041317ms
 
- */
+*/
 //REF
 //

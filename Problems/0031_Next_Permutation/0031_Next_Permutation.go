@@ -211,78 +211,78 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {[1 2 3] 
+Test count  0 for node {[1 2 3]
 [1,3,2]
 
             }
-Solution 1: 
+Solution 1:
 >Solution result
-Correct result is  
+Correct result is
 [1,3,2]
 
-            
+
 TimeLapse 1.018µs
 Solution 2: Optimize a little bit
 >Solution result
-Correct result is  
+Correct result is
 [1,3,2]
 
-            
+
 TimeLapse 593ns
 Solution 2: BruteForce, failure solution, need check
 >Solution result
-Correct result is  
+Correct result is
 [1,3,2]
 
-            
+
 TimeLapse 34.832µs
 ===============
-Test count  1 for node {[3 2 1] 
+Test count  1 for node {[3 2 1]
       [1,2,3]
             }
-Solution 1: 
+Solution 1:
 >Solution result
-Correct result is  
+Correct result is
       [1,2,3]
-            
+
 TimeLapse 277ns
 Solution 2: Optimize a little bit
 >Solution result
-Correct result is  
+Correct result is
       [1,2,3]
-            
+
 TimeLapse 407ns
 Solution 2: BruteForce, failure solution, need check
 >Solution result
-Correct result is  
+Correct result is
       [1,2,3]
-            
+
 TimeLapse 4.148µs
 ===============
-Test count  2 for node {[1 1 5] 
+Test count  2 for node {[1 1 5]
       [1,5,1]
             }
-Solution 1: 
+Solution 1:
 >Solution result
-Correct result is  
+Correct result is
       [1,5,1]
-            
+
 TimeLapse 297ns
 Solution 2: Optimize a little bit
 >Solution result
-Correct result is  
+Correct result is
       [1,5,1]
-            
+
 TimeLapse 297ns
 Solution 2: BruteForce, failure solution, need check
 >Solution result
-Correct result is  
+Correct result is
       [1,5,1]
-            
+
 TimeLapse 4.611µs
 ===============
 TimeLapse Whole Program 665.373µs
 
- */
+*/
 //REF
 //

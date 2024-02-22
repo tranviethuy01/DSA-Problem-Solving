@@ -390,110 +390,110 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {(() 
+Test count  0 for node {(()
 2
             }
 Solution 1: use Stack
 >Solution result 2
-Correct result is  
+Correct result is
 2
-            
+
 TimeLapse 1.371µs
 Solution 2: DFS
 >Solution result 0
-Correct result is  
+Correct result is
 2
-            
+
 TimeLapse 926ns
 Solution 4: DP
 >Solution result 2
-Correct result is  
+Correct result is
 2
-            
+
 TimeLapse 1.203µs
 Solution 5: Recursively
 >Solution result 2
-Correct result is  
+Correct result is
 2
-            
+
 TimeLapse 814ns
 Solution 6: BruteForce
 >Solution result 2
-Correct result is  
+Correct result is
 2
-            
+
 TimeLapse 666ns
 ===============
-Test count  1 for node {)()()) 
+Test count  1 for node {)()())
 4
             }
 Solution 1: use Stack
 >Solution result 4
-Correct result is  
+Correct result is
 4
-            
+
 TimeLapse 815ns
 Solution 2: DFS
 >Solution result 0
-Correct result is  
+Correct result is
 4
-            
+
 TimeLapse 833ns
 Solution 4: DP
 >Solution result 4
-Correct result is  
+Correct result is
 4
-            
+
 TimeLapse 611ns
 Solution 5: Recursively
 >Solution result 4
-Correct result is  
+Correct result is
 4
-            
+
 TimeLapse 834ns
 Solution 6: BruteForce
 >Solution result 4
-Correct result is  
+Correct result is
 4
-            
+
 TimeLapse 500ns
 ===============
-Test count  2 for node { 
+Test count  2 for node {
 			0
             }
 Solution 1: use Stack
 >Solution result 0
-Correct result is  
+Correct result is
 			0
-            
+
 TimeLapse 334ns
 Solution 2: DFS
 >Solution result 0
-Correct result is  
+Correct result is
 			0
-            
+
 TimeLapse 111ns
 Solution 4: DP
 >Solution result 0
-Correct result is  
+Correct result is
 			0
-            
+
 TimeLapse 111ns
 Solution 5: Recursively
 >Solution result 0
-Correct result is  
+Correct result is
 			0
-            
+
 TimeLapse 130ns
 Solution 6: BruteForce
 >Solution result 0
-Correct result is  
+Correct result is
 			0
-            
+
 TimeLapse 111ns
 ===============
 TimeLapse Whole Program 793.487µs
 
- */
+*/
 //REF
 //

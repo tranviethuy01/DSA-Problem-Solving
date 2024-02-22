@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 	"sort"
+	"strconv"
 	"time"
 )
 
@@ -19,8 +19,6 @@ Space Complexity:
 The space complexity is dominated by the arrays factorial and nums, each of size n, thus occupying O(n) space.
 The additional space used inside the function is independent of the input size and can be considered constant.
 */
-
-
 
 func getPermutation(n int, k int) string {
 	factorial := make([]int, n)
@@ -96,7 +94,6 @@ func getPermutation_DFS(n, k int) string {
 	return dfs(remaining, k)
 }
 
-
 // approach: BFS
 // NOTE: this approach is failure, need check code again
 /*
@@ -165,8 +162,6 @@ func getPermutation_BFS(n, k int) string {
 	return ""
 }
 
-
-
 // approach: dynamic programing
 /*
 Time Complexity:
@@ -183,7 +178,6 @@ The space used for other variables is negligible and can be considered constant.
 Therefore, the overall space complexity is O(n).
 
 */
-
 
 func getPermutation_DP(n, k int) string {
 	factorial := make([]int, n)
@@ -219,23 +213,23 @@ func getPermutation_DP(n, k int) string {
 // approach : BruteForce
 /*
 Time Complexity:
-Generating all permutations of the given set involves backtracking, where at each step, we have 
-n choices to make for the current position and repeat the process for the remaining positions. This results in 
+Generating all permutations of the given set involves backtracking, where at each step, we have
+n choices to make for the current position and repeat the process for the remaining positions. This results in
 n! permutations.
 For each permutation, the conversion to a string takes linear time, but it's negligible compared to the permutation generation process.
-Therefore, the time complexity is O(n!), where 
+Therefore, the time complexity is O(n!), where
 n is the given integer representing the size of the set.
 
 Space Complexity:
 We use additional space to store the permutations. Since there are
-n! permutations, the space complexity is 
-O(n!⋅n) to store all permutations. Each permutation has a length of 
+n! permutations, the space complexity is
+O(n!⋅n) to store all permutations. Each permutation has a length of
 n characters.
-Additionally, during the recursive generation of permutations, there's a stack space required for the recursion, which is proportional to the depth of recursion. In the worst case, this depth is 
-n, so the space complexity for recursion is 
+Additionally, during the recursive generation of permutations, there's a stack space required for the recursion, which is proportional to the depth of recursion. In the worst case, this depth is
+n, so the space complexity for recursion is
 O(n).
 Hence, the overall space complexity is O(n!⋅n)+O(n), which simplifies to O(n!⋅n).
-In summary, the brute-force solution has a time complexity of O(n!) and a space complexity of 
+In summary, the brute-force solution has a time complexity of O(n!) and a space complexity of
 O(n!⋅n), making it inefficient for large values of n.
 
 */
@@ -279,8 +273,6 @@ func convertToString(nums []int) string {
 	return result
 }
 
-
-
 func main() {
 	timeStartWholeProgram := time.Now()
 
@@ -321,7 +313,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-		
 		fmt.Println("Solution 2: DFS")
 		timeStart = time.Now()
 		result = getPermutation_DFS(value.N, value.K)
@@ -329,8 +320,7 @@ func main() {
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
-	
-	
+
 		fmt.Println("Solution 3: BFS : note, failure solution, need check code")
 		timeStart = time.Now()
 		result = getPermutation_BFS(value.N, value.K)
@@ -339,7 +329,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-	
 		fmt.Println("Solution 4: DP")
 		timeStart = time.Now()
 		result = getPermutation_DP(value.N, value.K)
@@ -348,7 +337,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-		
 		fmt.Println("Solution 5: BruteForce")
 		timeStart = time.Now()
 		result = getPermutation_BruteForce(value.N, value.K)
@@ -372,112 +360,112 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {3 3 
+Test count  0 for node {3 3
 "213"
             }
 Solution 1: Backtrack
 >Solution result 213
-Correct result is  
+Correct result is
 "213"
-            
+
 TimeLapse 11.684µs
 Solution 2: DFS
 >Solution result 213
-Correct result is  
+Correct result is
 "213"
-            
+
 TimeLapse 2.056µs
 Solution 3: BFS : note, failure solution, need check code
 >Solution result 211
-Correct result is  
+Correct result is
 "213"
-            
+
 TimeLapse 69.572µs
 Solution 4: DP
 >Solution result 213
-Correct result is  
+Correct result is
 "213"
-            
+
 TimeLapse 1.611µs
 Solution 5: BruteForce
 >Solution result 213
-Correct result is  
+Correct result is
 "213"
-            
+
 TimeLapse 27.351µs
 ===============
-Test count  1 for node {4 9 
+Test count  1 for node {4 9
 "2314"
             }
 Solution 1: Backtrack
 >Solution result 2314
-Correct result is  
+Correct result is
 "2314"
-            
+
 TimeLapse 1.481µs
 Solution 2: DFS
 >Solution result 2314
-Correct result is  
+Correct result is
 "2314"
-            
+
 TimeLapse 1.574µs
 Solution 3: BFS : note, failure solution, need check code
 >Solution result 2211
-Correct result is  
+Correct result is
 "2314"
-            
+
 TimeLapse 249.844µs
 Solution 4: DP
 >Solution result 2314
-Correct result is  
+Correct result is
 "2314"
-            
+
 TimeLapse 1.444µs
 Solution 5: BruteForce
 >Solution result 2314
-Correct result is  
+Correct result is
 "2314"
-            
+
 TimeLapse 26.574µs
 ===============
-Test count  2 for node {3 1 
+Test count  2 for node {3 1
 "123"
 
             }
 Solution 1: Backtrack
 >Solution result 123
-Correct result is  
+Correct result is
 "123"
 
-            
+
 TimeLapse 1.241µs
 Solution 2: DFS
 >Solution result 123
-Correct result is  
+Correct result is
 "123"
 
-            
+
 TimeLapse 1.333µs
 Solution 3: BFS : note, failure solution, need check code
 >Solution result 111
-Correct result is  
+Correct result is
 "123"
 
-            
+
 TimeLapse 51.609µs
 Solution 4: DP
 >Solution result 123
-Correct result is  
+Correct result is
 "123"
 
-            
+
 TimeLapse 1.277µs
 Solution 5: BruteForce
 >Solution result 123
-Correct result is  
+Correct result is
 "123"
 
-            
+
 TimeLapse 4.574µs
 ===============
 TimeLapse Whole Program 1.409824ms

@@ -221,111 +221,111 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {[1 2 3] 
+Test count  0 for node {[1 2 3]
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
             }
 Solution 1: Backtrack
 >Solution result [[1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 1 2] [3 2 1]]
-Correct result is  
+Correct result is
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 12.685µs
 Solution 2: DFS
 >Solution result [[1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 1 2] [3 2 1]]
-Correct result is  
+Correct result is
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 4.685µs
 Solution 3: BFS
 >Solution result [[3 2 1] [2 3 1] [2 1 3] [3 1 2] [1 3 2] [1 2 3]]
-Correct result is  
+Correct result is
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 4.667µs
 Solution 4: DP
 >Solution result [[1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 1 2] [3 2 1]]
-Correct result is  
+Correct result is
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 10.093µs
 Solution 5: BruteForce
 >Solution result [[1 2 3] [1 3 2] [2 1 3] [2 3 1] [3 2 1] [3 1 2]]
-Correct result is  
+Correct result is
 [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
-            
+
 TimeLapse 2.537µs
 ===============
-Test count  1 for node {[0 1] 
+Test count  1 for node {[0 1]
 			[[0,1],[1,0]]
             }
 Solution 1: Backtrack
 >Solution result [[0 1] [1 0]]
-Correct result is  
+Correct result is
 			[[0,1],[1,0]]
-            
+
 TimeLapse 1.741µs
 Solution 2: DFS
 >Solution result [[0 1] [1 0]]
-Correct result is  
+Correct result is
 			[[0,1],[1,0]]
-            
+
 TimeLapse 1.667µs
 Solution 3: BFS
 >Solution result [[1 0] [0 1]]
-Correct result is  
+Correct result is
 			[[0,1],[1,0]]
-            
+
 TimeLapse 1.814µs
 Solution 4: DP
 >Solution result [[0 1] [1 0]]
-Correct result is  
+Correct result is
 			[[0,1],[1,0]]
-            
+
 TimeLapse 2.649µs
 Solution 5: BruteForce
 >Solution result [[0 1] [1 0]]
-Correct result is  
+Correct result is
 			[[0,1],[1,0]]
-            
+
 TimeLapse 1.333µs
 ===============
-Test count  2 for node {[1] 
+Test count  2 for node {[1]
 			[[1]]
             }
 Solution 1: Backtrack
 >Solution result [[1]]
-Correct result is  
+Correct result is
 			[[1]]
-            
+
 TimeLapse 1.019µs
 Solution 2: DFS
 >Solution result [[1]]
-Correct result is  
+Correct result is
 			[[1]]
-            
+
 TimeLapse 1.074µs
 Solution 3: BFS
 >Solution result [[1]]
-Correct result is  
+Correct result is
 			[[1]]
-            
+
 TimeLapse 907ns
 Solution 4: DP
 >Solution result [[1]]
-Correct result is  
+Correct result is
 			[[1]]
-            
+
 TimeLapse 1.018µs
 Solution 5: BruteForce
 >Solution result [[1]]
-Correct result is  
+Correct result is
 			[[1]]
-            
+
 TimeLapse 704ns
 ===============
 TimeLapse Whole Program 924.015µs
 
 
- */
+*/
 //REF
 //
