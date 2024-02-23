@@ -103,42 +103,39 @@ func dfs(matrix [][]int, visited [][]bool, row, col, num, n int) bool {
 	return false
 }
 
-
 //approach : ...
 /*
 
-*/
+ */
 
 func checkValid_Approach2(matrix [][]int) bool {
-    n := len(matrix)
-    target := n * (n + 1) / 2 // Sum of integers from 1 to n
+	n := len(matrix)
+	target := n * (n + 1) / 2 // Sum of integers from 1 to n
 
-    // Check rows
-    for i := 0; i < n; i++ {
-        sum := 0
-        for j := 0; j < n; j++ {
-            sum += matrix[i][j]
-        }
-        if sum != target {
-            return false
-        }
-    }
+	// Check rows
+	for i := 0; i < n; i++ {
+		sum := 0
+		for j := 0; j < n; j++ {
+			sum += matrix[i][j]
+		}
+		if sum != target {
+			return false
+		}
+	}
 
-    // Check columns
-    for j := 0; j < n; j++ {
-        sum := 0
-        for i := 0; i < n; i++ {
-            sum += matrix[i][j]
-        }
-        if sum != target {
-            return false
-        }
-    }
+	// Check columns
+	for j := 0; j < n; j++ {
+		sum := 0
+		for i := 0; i < n; i++ {
+			sum += matrix[i][j]
+		}
+		if sum != target {
+			return false
+		}
+	}
 
-    return true
+	return true
 }
-
-
 
 //approach : Backtrack
 /*
@@ -192,39 +189,35 @@ Since the algorithm iterates through each row and column separately and there ar
 
 */
 
-    func checkValid_BruteForce(matrix [][]int) bool {
-    n := len(matrix)
-    
-    // Check rows
-    for i := 0; i < n; i++ {
-        seen := make([]bool, n+1)
-        for j := 0; j < n; j++ {
-            num := matrix[i][j]
-            if num < 1 || num > n || seen[num] {
-                return false
-            }
-            seen[num] = true
-        }
-    }
-    
-    // Check columns
-    for j := 0; j < n; j++ {
-        seen := make([]bool, n+1)
-        for i := 0; i < n; i++ {
-            num := matrix[i][j]
-            if num < 1 || num > n || seen[num] {
-                return false
-            }
-            seen[num] = true
-        }
-    }
-    
-    return true
+func checkValid_BruteForce(matrix [][]int) bool {
+	n := len(matrix)
+
+	// Check rows
+	for i := 0; i < n; i++ {
+		seen := make([]bool, n+1)
+		for j := 0; j < n; j++ {
+			num := matrix[i][j]
+			if num < 1 || num > n || seen[num] {
+				return false
+			}
+			seen[num] = true
+		}
+	}
+
+	// Check columns
+	for j := 0; j < n; j++ {
+		seen := make([]bool, n+1)
+		for i := 0; i < n; i++ {
+			num := matrix[i][j]
+			if num < 1 || num > n || seen[num] {
+				return false
+			}
+			seen[num] = true
+		}
+	}
+
+	return true
 }
-
-
-
-
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -263,7 +256,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 		fmt.Println("Solution 3: BruteForce")
 		timeStart = time.Now()
 		result = checkValid_Backtrack(value.Board)
@@ -280,7 +272,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 		fmt.Println("Solution 5: Another approach")
 		timeStart = time.Now()
 		result = checkValid_Approach2(value.Board)
@@ -288,8 +279,6 @@ func main() {
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
-
-
 
 	}
 
@@ -307,74 +296,74 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {[[1 2 3] [3 1 2] [2 3 1]] 
+Test count  0 for node {[[1 2 3] [3 1 2] [2 3 1]]
 	true
             }
 Solution 1: Backtrack
 >Solution result true
-Correct result is  
+Correct result is
 	true
-            
+
 TimeLapse 7.814µs
 Solution 2: DFS : this is a failure solution, need check
 >Solution result false
-Correct result is  
+Correct result is
 	true
-            
+
 TimeLapse 2.481µs
 Solution 3: BruteForce
 >Solution result true
-Correct result is  
+Correct result is
 	true
-            
+
 TimeLapse 1.815µs
 Solution 4: Backtrack
 >Solution result true
-Correct result is  
+Correct result is
 	true
-            
+
 TimeLapse 1.204µs
 Solution 5: Another approach
 >Solution result true
-Correct result is  
+Correct result is
 	true
-            
+
 TimeLapse 778ns
 ===============
-Test count  1 for node {[[1 1 1] [1 2 3] [1 2 3]] 
+Test count  1 for node {[[1 1 1] [1 2 3] [1 2 3]]
 	false
             }
 Solution 1: Backtrack
 >Solution result false
-Correct result is  
+Correct result is
 	false
-            
+
 TimeLapse 2.352µs
 Solution 2: DFS : this is a failure solution, need check
 >Solution result false
-Correct result is  
+Correct result is
 	false
-            
+
 TimeLapse 1.13µs
 Solution 3: BruteForce
 >Solution result false
-Correct result is  
+Correct result is
 	false
-            
+
 TimeLapse 1.167µs
 Solution 4: Backtrack
 >Solution result false
-Correct result is  
+Correct result is
 	false
-            
+
 TimeLapse 1.166µs
 Solution 5: Another approach
 >Solution result false
-Correct result is  
+Correct result is
 	false
-            
+
 TimeLapse 167ns
 ===============
 TimeLapse Whole Program 636.001µs
 
- */
+*/

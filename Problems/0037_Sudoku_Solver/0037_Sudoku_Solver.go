@@ -250,6 +250,8 @@ func main() {
 			fmt.Println(string(row))
 		}
 
+		fmt.Println("Solution with BFS: not suitable")
+
 		//note:need create a new copied board and handle on that
 		fmt.Println("Solution 3: BruteForce")
 		timeStart = time.Now()
