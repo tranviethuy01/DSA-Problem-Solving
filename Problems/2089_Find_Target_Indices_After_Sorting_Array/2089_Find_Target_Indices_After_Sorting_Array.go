@@ -6,9 +6,7 @@ import (
 	"time"
 )
 
-
-//NOTE: use solution targetIndices_SingleLoop, which have time complexity is O(n) and loop one. 
-
+//NOTE: use solution targetIndices_SingleLoop, which have time complexity is O(n) and loop one.
 
 //approach: this solution fail, need check code
 //Time Complexity: dominated by the sorting step, which is O(n log n)
@@ -69,22 +67,21 @@ func indexOf(nums []int, target int, originalIndex int) int {
 //Therefore, the overall space complexity is O(n).
 //
 
-
 func targetIndices_Linear(nums []int, target int) []int {
-    // Sort the nums array
-    sort.Ints(nums)
-    
-    // Initialize an empty list to store the indices of target elements
-    var ans []int
-    
-    // Traverse the sorted array and store indices of target elements
-    for i := 0; i < len(nums); i++ {
-        if nums[i] == target {
-            ans = append(ans, i)
-        }
-    }
-    
-    return ans
+	// Sort the nums array
+	sort.Ints(nums)
+
+	// Initialize an empty list to store the indices of target elements
+	var ans []int
+
+	// Traverse the sorted array and store indices of target elements
+	for i := 0; i < len(nums); i++ {
+		if nums[i] == target {
+			ans = append(ans, i)
+		}
+	}
+
+	return ans
 }
 
 //approach:
@@ -95,33 +92,30 @@ func targetIndices_Linear(nums []int, target int) []int {
 //Therefore, the overall space complexity of the algorithm is O(n).
 
 func targetIndices_SingleLoop(nums []int, target int) []int {
-    count := 0
-    lessthan := 0
-    
-    // Count the number of occurrences of target and elements less than target
-    for _, n := range nums {
-        if n == target {
-            count++
-        }
-        if n < target {
-            lessthan++
-        }
-    }
-    
-    // Initialize a slice to store the result
-    result := make([]int, count)
-    
-    // Populate the result slice with indices less than target
-    for i := 0; i < count; i++ {
-        result[i] = lessthan
-        lessthan++
-    }
-    
-    return result
+	count := 0
+	lessthan := 0
+
+	// Count the number of occurrences of target and elements less than target
+	for _, n := range nums {
+		if n == target {
+			count++
+		}
+		if n < target {
+			lessthan++
+		}
+	}
+
+	// Initialize a slice to store the result
+	result := make([]int, count)
+
+	// Populate the result slice with indices less than target
+	for i := 0; i < count; i++ {
+		result[i] = lessthan
+		lessthan++
+	}
+
+	return result
 }
-
-
-
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -171,7 +165,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 		fmt.Println("Solution 3: a Single loop approach")
 		timeStart = time.Now()
 		result = targetIndices_SingleLoop(value.Nums, value.Target)
@@ -179,7 +172,6 @@ func main() {
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
-
 
 	}
 
@@ -198,73 +190,73 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {[1 2 5 2 3] 2 
+Test count  0 for node {[1 2 5 2 3] 2
       [1,2]
             }
 Solution 1: note, this solution failure, need check code again
 >Solution result [-1 2]
-Correct result is  
+Correct result is
       [1,2]
-            
+
 TimeLapse 6.778µs
 Solution 2: Linear approach
 >Solution result [1 2]
-Correct result is  
+Correct result is
       [1,2]
-            
+
 TimeLapse 1.722µs
 Solution 3: a Single loop approach
 >Solution result [1 2]
-Correct result is  
+Correct result is
       [1,2]
-            
+
 TimeLapse 685ns
 ===============
-Test count  1 for node {[1 2 5 2 3] 3 
+Test count  1 for node {[1 2 5 2 3] 3
       [3]
             }
 Solution 1: note, this solution failure, need check code again
 >Solution result [-1]
-Correct result is  
+Correct result is
       [3]
-            
+
 TimeLapse 1.722µs
 Solution 2: Linear approach
 >Solution result [3]
-Correct result is  
+Correct result is
       [3]
-            
+
 TimeLapse 1.111µs
 Solution 3: a Single loop approach
 >Solution result [3]
-Correct result is  
+Correct result is
       [3]
-            
+
 TimeLapse 389ns
 ===============
-Test count  2 for node {[1 2 5 2 3] 5 
+Test count  2 for node {[1 2 5 2 3] 5
       [4]
             }
 Solution 1: note, this solution failure, need check code again
 >Solution result [-1]
-Correct result is  
+Correct result is
       [4]
-            
+
 TimeLapse 1.63µs
 Solution 2: Linear approach
 >Solution result [4]
-Correct result is  
+Correct result is
       [4]
-            
+
 TimeLapse 1.018µs
 Solution 3: a Single loop approach
 >Solution result [4]
-Correct result is  
+Correct result is
       [4]
-            
+
 TimeLapse 259ns
 ===============
 TimeLapse Whole Program 646.386µs
 
 
- */
+*/
