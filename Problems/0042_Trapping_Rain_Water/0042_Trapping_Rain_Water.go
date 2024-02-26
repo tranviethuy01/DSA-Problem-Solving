@@ -5,6 +5,7 @@ import (
 	"math"
 	"time"
 )
+
 //NOTE: should use DP or 2 pointers approach
 
 //approach DP
@@ -81,16 +82,16 @@ func min(a, b int) int {
 Time Complexity:
 The solution iterates through the height array using two pointers (left and right) until they meet, which requires a single pass through the array.
 Hence, the time complexity is linear,
-O(n), where 
+O(n), where
 n is the number of elements in the height array.
 Space Complexity:
 
 The solution uses only a constant amount of additional space, regardless of the input size. It maintains a few variables (left, right, leftMax, rightMax, total), but these consume a constant amount of memory.
-Thus, the space complexity is constant, 
+Thus, the space complexity is constant,
 O(1).
 In summary, the time complexity of the two-pointer solution is
-O(n), and the space complexity is 
-O(1), where 
+O(n), and the space complexity is
+O(1), where
 n is the number of elements in the height array. This makes the solution efficient in terms of both time and space.
 
 */
@@ -123,9 +124,6 @@ func trap_2Pointer(height []int) int {
 
 	return total
 }
-
-
-
 
 //approach backtrack
 /*
@@ -228,32 +226,31 @@ func trap_Adapt1(height []int) int {
 //}
 //
 
-
 //approach dfs .  it might not be the most efficient approach compared to dynamic programming or two-pointer methods.
 /*
 Time Complexity:
 
-The trap function iterates through each bar of the elevation map, resulting in 
+The trap function iterates through each bar of the elevation map, resulting in
 O(n) time complexity.
-For each bar, the DFS functions (dfsLeft and dfsRight) traverse through the height array. In the worst case, each DFS function may traverse up to 
+For each bar, the DFS functions (dfsLeft and dfsRight) traverse through the height array. In the worst case, each DFS function may traverse up to
 O(n) elements.
-Thus, for each bar, the total time complexity of DFS operations is 
+Thus, for each bar, the total time complexity of DFS operations is
 O(n).
-Overall, the time complexity of the solution is 
-O(n 
+Overall, the time complexity of the solution is
+O(n
 2
  ), considering that the DFS operations are performed for each bar.
 Space Complexity:
 
-The space complexity primarily comes from the recursive calls in the DFS functions. However, the depth of recursion is limited by the height of the elevation map, which can be at most 
+The space complexity primarily comes from the recursive calls in the DFS functions. However, the depth of recursion is limited by the height of the elevation map, which can be at most
 O(n) in the worst case.
 Each DFS function uses a constant amount of additional space for variables and function call stack.
-Therefore, the space complexity of the solution is 
+Therefore, the space complexity of the solution is
 O(n).
-In summary, the time complexity of the DFS solution is 
-O(n 
+In summary, the time complexity of the DFS solution is
+O(n
 2
- ), and the space complexity is 
+ ), and the space complexity is
 O(n).
 
 */
@@ -309,7 +306,6 @@ func dfsRight(height []int, index, start, currentMax int) int {
 
 //approach BruteForce
 
-
 func trap_BruteForce(height []int) int {
 	if len(height) < 3 {
 		return 0
@@ -347,7 +343,6 @@ func trap_BruteForce(height []int) int {
 //}
 //
 //
-
 
 func main() {
 	timeStartWholeProgram := time.Now()
@@ -408,7 +403,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 		fmt.Println("Solution 5: DFS ")
 		timeStart = time.Now()
 		result = trap_DFS(value.Nums)
@@ -417,7 +411,6 @@ func main() {
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
 
-
 		fmt.Println("Solution 6: BruteForce ")
 		timeStart = time.Now()
 		result = trap_BruteForce(value.Nums)
@@ -425,7 +418,6 @@ func main() {
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
-
 
 	}
 
@@ -443,126 +435,126 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {[1 2 0] 
+Test count  0 for node {[1 2 0]
     3
             }
 Solution 1: DP
 >Solution result 0
-Correct result is  
+Correct result is
     3
-            
+
 TimeLapse 944ns
 Solution 2: 2 pointers
 >Solution result 0
-Correct result is  
+Correct result is
     3
-            
+
 TimeLapse 481ns
-Solution 3: Backtrack 
+Solution 3: Backtrack
 >Solution result 0
-Correct result is  
+Correct result is
     3
-            
+
 TimeLapse 426ns
-Solution 4: adpapt code from leetcode 
+Solution 4: adpapt code from leetcode
 >Solution result 0
-Correct result is  
+Correct result is
     3
-            
+
 TimeLapse 407ns
-Solution 5: DFS 
+Solution 5: DFS
 >Solution result 0
-Correct result is  
+Correct result is
     3
-            
+
 TimeLapse 944ns
-Solution 6: BruteForce 
+Solution 6: BruteForce
 >Solution result 0
-Correct result is  
+Correct result is
     3
-            
+
 TimeLapse 351ns
 ===============
-Test count  1 for node {[3 4 -1 1] 
+Test count  1 for node {[3 4 -1 1]
     2
             }
 Solution 1: DP
 >Solution result 2
-Correct result is  
+Correct result is
     2
-            
+
 TimeLapse 481ns
 Solution 2: 2 pointers
 >Solution result 2
-Correct result is  
+Correct result is
     2
-            
+
 TimeLapse 203ns
-Solution 3: Backtrack 
+Solution 3: Backtrack
 >Solution result 2
-Correct result is  
+Correct result is
     2
-            
+
 TimeLapse 241ns
-Solution 4: adpapt code from leetcode 
+Solution 4: adpapt code from leetcode
 >Solution result 2
-Correct result is  
+Correct result is
     2
-            
+
 TimeLapse 185ns
-Solution 5: DFS 
+Solution 5: DFS
 >Solution result 2
-Correct result is  
+Correct result is
     2
-            
+
 TimeLapse 259ns
-Solution 6: BruteForce 
+Solution 6: BruteForce
 >Solution result 2
-Correct result is  
+Correct result is
     2
-            
+
 TimeLapse 222ns
 ===============
-Test count  2 for node {[7 8 9 11 12] 
+Test count  2 for node {[7 8 9 11 12]
     1
             }
 Solution 1: DP
 >Solution result 0
-Correct result is  
+Correct result is
     1
-            
+
 TimeLapse 500ns
 Solution 2: 2 pointers
 >Solution result 0
-Correct result is  
+Correct result is
     1
-            
+
 TimeLapse 149ns
-Solution 3: Backtrack 
+Solution 3: Backtrack
 >Solution result 0
-Correct result is  
+Correct result is
     1
-            
+
 TimeLapse 277ns
-Solution 4: adpapt code from leetcode 
+Solution 4: adpapt code from leetcode
 >Solution result 0
-Correct result is  
+Correct result is
     1
-            
+
 TimeLapse 148ns
-Solution 5: DFS 
+Solution 5: DFS
 >Solution result 0
-Correct result is  
+Correct result is
     1
-            
+
 TimeLapse 334ns
-Solution 6: BruteForce 
+Solution 6: BruteForce
 >Solution result 0
-Correct result is  
+Correct result is
     1
-            
+
 TimeLapse 259ns
 ===============
 TimeLapse Whole Program 846.312µs
 
- */
+*/
