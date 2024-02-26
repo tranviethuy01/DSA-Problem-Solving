@@ -175,7 +175,13 @@ func isMatch_BFS(s string, p string) bool {
 }
 
 //approach BruteForce
+/*
+Algorithm: The algorithm exhaustively tries all possible matches between the string s and the pattern p by recursively exploring all combinations. It starts comparing characters from the beginning of both strings and patterns and advances the pointers based on matching conditions or wildcard '*' characters.
 
+Time Complexity: In the worst case, the time complexity of this algorithm is exponential, O(2^(m+n)), where m is the length of string s and n is the length of pattern p. This is because for each character in p, if it's not a wildcard '*', the algorithm explores all possible matches in the string s.
+
+Space Complexity: The space complexity is O(m + n) due to the recursive calls on the call stack, where m is the length of string s and n is the length of pattern p. Additionally, there's a constant amount of space used for other variables in the function. However, the space complexity does not affect the overall complexity, as the dominating factor is the time complexity due to the exponential nature of the algorithm.
+*/
 func isMatch_BruteForce(s string, p string) bool {
 	return matchHelper(s, p, 0, 0)
 }
