@@ -36,7 +36,7 @@ func addStrings(num1 string, num2 string) string {
 	for i >= 0 || j >= 0 || carry > 0 {
 		sum := carry
 
-    fmt.Println("i", i, "j", j, "carry", carry, "sum", sum)
+		fmt.Println("i", i, "j", j, "carry", carry, "sum", sum)
 		if i >= 0 {
 			sum += int(num1[i] - '0')
 			i--
@@ -52,7 +52,7 @@ func addStrings(num1 string, num2 string) string {
 
 	// Reverse the string in the StringBuilder
 	result := sb.String()
-  fmt.Println(" sb ", sb, "result before Reverse", result)
+	fmt.Println(" sb ", sb, "result before Reverse", result)
 	return reverseString(result)
 }
 
@@ -120,7 +120,7 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {11 123 
+Test count  0 for node {11 123
 "134"
             }
 Solution 1: manual add strings
@@ -129,12 +129,12 @@ i 0 j 1 carry 0 sum 0
 i -1 j 0 carry 0 sum 0
  sb  {0x400008dc38 [52 51 49]} result before Reverse 431
 >Solution result 134
-Correct result is  
+Correct result is
 "134"
-            
+
 TimeLapse 50.684µs
 ===============
-Test count  1 for node {456 77 
+Test count  1 for node {456 77
 "533"
             }
 Solution 1: manual add strings
@@ -143,26 +143,26 @@ i 1 j 0 carry 1 sum 1
 i 0 j -1 carry 1 sum 1
  sb  {0x400008dc38 [51 51 53]} result before Reverse 335
 >Solution result 533
-Correct result is  
+Correct result is
 "533"
-            
+
 TimeLapse 40.592µs
 ===============
-Test count  2 for node {0 0 
+Test count  2 for node {0 0
 "0"
             }
 Solution 1: manual add strings
 i 0 j 0 carry 0 sum 0
  sb  {0x400008dc38 [48]} result before Reverse 0
 >Solution result 0
-Correct result is  
+Correct result is
 "0"
-            
+
 TimeLapse 21.482µs
 ===============
 TimeLapse Whole Program 475.644µs
 
 
- */
+*/
 //REF
 //
