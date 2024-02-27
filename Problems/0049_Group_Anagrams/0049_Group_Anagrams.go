@@ -115,44 +115,44 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {[eat tea tan ate nat bat] 
+Test count  0 for node {[eat tea tan ate nat bat]
 [["bat"],["nat","tan"],["ate","eat","tea"]]
 
             }
 Solution 1: StraightForward
 >Solution result [[eat tea ate] [tan nat] [bat]]
-Correct result is  
+Correct result is
 [["bat"],["nat","tan"],["ate","eat","tea"]]
 
-            
+
 TimeLapse 20.315µs
 Memory before 69376 bytes Memory after 71504 bytes Memory used: 2128 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 71504 bytes
 ===============
-Test count  1 for node {[] 
+Test count  1 for node {[]
       [[""]]
 
             }
 Solution 1: StraightForward
 >Solution result [[]]
-Correct result is  
+Correct result is
       [[""]]
 
-            
+
 TimeLapse 3.148µs
 Memory before 69376 bytes Memory after 71760 bytes Memory used: 2384 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 71760 bytes
 ===============
-Test count  2 for node {[a] 
+Test count  2 for node {[a]
       [["a"]]
 
             }
 Solution 1: StraightForward
 >Solution result [[a]]
-Correct result is  
+Correct result is
       [["a"]]
 
-            
+
 TimeLapse 3.092µs
 Memory before 69376 bytes Memory after 72032 bytes Memory used: 2656 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 72032 bytes

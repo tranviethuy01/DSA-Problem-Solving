@@ -60,6 +60,49 @@ func findRotationEqual(mat [][]int, target [][]int) bool {
 	return findRotation(mat, target) || findRotation(rotateMatrix(mat), target)
 }
 
+//approach : adapt leetcode solution
+/*
+bool findRotation(vector<vector<int>>& mat, vector<vector<int>>& target)
+{
+	bool c[4];
+	memset(c,true,sizeof(c));
+	int n=mat.size();
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<n;j++)
+		{
+			if(mat[i][j]!=target[i][j]) c[0]=false;
+			if(mat[i][j]!=target[n-j-1][i]) c[1]=false;
+			if(mat[i][j]!=target[n-i-1][n-j-1]) c[2]=false;
+			if(mat[i][j]!=target[j][n-i-1]) c[3]=false;
+		}
+	}
+	return c[0]||c[1]||c[2]||c[3];
+}
+*/
+
+func findRotation_Approach2(mat [][]int, target [][]int) bool {
+	c := [4]bool{true, true, true, true}
+	n := len(mat)
+	for i := 0; i < n; i++ {
+		for j := 0; j < n; j++ {
+			if mat[i][j] != target[i][j] {
+				c[0] = false
+			}
+			if mat[i][j] != target[n-j-1][i] {
+				c[1] = false
+			}
+			if mat[i][j] != target[n-i-1][n-j-1] {
+				c[2] = false
+			}
+			if mat[i][j] != target[j][n-i-1] {
+				c[3] = false
+			}
+		}
+	}
+	return c[0] || c[1] || c[2] || c[3]
+}
+
 func main() {
 	timeStartWholeProgram := time.Now()
 
@@ -107,9 +150,16 @@ false
 		runtime.ReadMemStats(&m)
 		memAfter := m.Alloc
 		fmt.Println("Memory before", memBefore, "bytes", "Memory after", memAfter, "bytes", "Memory used:", memAfter-memBefore, "bytes")
-	
-    fmt.Printf("Memory usage (HeapAlloc) after Test Case i %d, : %v bytes\n", count,  m.HeapAlloc)
 
+		fmt.Printf("Memory usage (HeapAlloc) after Test Case i %d, : %v bytes\n", count, m.HeapAlloc)
+
+		fmt.Println("Solution 2: adapt leetcode solution")
+		timeStart = time.Now()
+		result = findRotation_Approach2(value.Matrix, value.Target)
+		timeLapse = time.Since(timeStart)
+		fmt.Println(">Solution result", result)
+		fmt.Println("Correct result is ", value.Result)
+		fmt.Println("TimeLapse", timeLapse)
 
 	}
 
@@ -126,45 +176,63 @@ type TestCase struct {
 
 /*
 
+
 ===============
-Test count  0 for node {[[0 1] [1 0]] [[1 0] [0 1]] 
+Test count  0 for node {[[0 1] [1 0]] [[1 0] [0 1]]
 true
             }
 Solution 1: StraightForward
 >Solution result true
-Correct result is  
+Correct result is
 true
-            
-TimeLapse 2.703µs
-Memory before 67856 bytes Memory after 69160 bytes Memory used: 1304 bytes
-Memory usage (HeapAlloc) after Test Case i 0, : 69160 bytes
+
+TimeLapse 3.092µs
+Memory before 69664 bytes Memory after 70968 bytes Memory used: 1304 bytes
+Memory usage (HeapAlloc) after Test Case i 0, : 70968 bytes
+Solution 2: adapt leetcode solution
+>Solution result true
+Correct result is
+true
+
+TimeLapse 888ns
 ===============
-Test count  1 for node {[[0 1] [1 1]] [[1 0] [0 1]] 
+Test count  1 for node {[[0 1] [1 1]] [[1 0] [0 1]]
 false
             }
 Solution 1: StraightForward
 >Solution result false
-Correct result is  
+Correct result is
 false
-            
-TimeLapse 2.87µs
-Memory before 67856 bytes Memory after 69768 bytes Memory used: 1912 bytes
-Memory usage (HeapAlloc) after Test Case i 1, : 69768 bytes
+
+TimeLapse 3.259µs
+Memory before 69664 bytes Memory after 71608 bytes Memory used: 1944 bytes
+Memory usage (HeapAlloc) after Test Case i 1, : 71608 bytes
+Solution 2: adapt leetcode solution
+>Solution result false
+Correct result is
+false
+
+TimeLapse 444ns
 ===============
-Test count  2 for node {[[0 0 0] [0 1 0] [1 1 1]] [[1 1 1] [0 1 0] [0 0 0]] 
+Test count  2 for node {[[0 0 0] [0 1 0] [1 1 1]] [[1 1 1] [0 1 0] [0 0 0]]
       true
             }
 Solution 1: StraightForward
 >Solution result true
-Correct result is  
+Correct result is
       true
-            
-TimeLapse 3.037µs
-Memory before 67856 bytes Memory after 70488 bytes Memory used: 2632 bytes
-Memory usage (HeapAlloc) after Test Case i 2, : 70488 bytes
-===============
-TimeLapse Whole Program 812.277µs
 
+TimeLapse 3.445µs
+Memory before 69664 bytes Memory after 72360 bytes Memory used: 2696 bytes
+Memory usage (HeapAlloc) after Test Case i 2, : 72360 bytes
+Solution 2: adapt leetcode solution
+>Solution result true
+Correct result is
+      true
+
+TimeLapse 722ns
+===============
+TimeLapse Whole Program 982.532µs
 */
 //REF
 //
