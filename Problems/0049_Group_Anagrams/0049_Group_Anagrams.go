@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"runtime"
 	"sort"
 	"time"
 )
@@ -75,6 +76,12 @@ func main() {
             `,
 		},
 	}
+
+	// Memory before allocation
+	var m runtime.MemStats
+	runtime.ReadMemStats(&m)
+	memBefore := m.Alloc
+
 	for count, value := range testInput {
 		fmt.Println("===============")
 		fmt.Println("Test count ", count, "for node", value)
@@ -85,6 +92,13 @@ func main() {
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
+
+		// Memory after allocation
+		runtime.ReadMemStats(&m)
+		memAfter := m.Alloc
+		fmt.Println("Memory before", memBefore, "bytes", "Memory after", memAfter, "bytes", "Memory used:", memAfter-memBefore, "bytes")
+
+		fmt.Printf("Memory usage (HeapAlloc) after Test Case i %d, : %v bytes\n", count, m.HeapAlloc)
 
 	}
 
@@ -100,45 +114,52 @@ type TestCase struct {
 
 /*
 
-
 ===============
-Test count  0 for node {[eat tea tan ate nat bat]
+Test count  0 for node {[eat tea tan ate nat bat] 
 [["bat"],["nat","tan"],["ate","eat","tea"]]
 
             }
 Solution 1: StraightForward
->Solution result [[tan nat] [bat] [eat tea ate]]
-Correct result is
+>Solution result [[eat tea ate] [tan nat] [bat]]
+Correct result is  
 [["bat"],["nat","tan"],["ate","eat","tea"]]
 
-
-TimeLapse 22.815µs
+            
+TimeLapse 20.315µs
+Memory before 69376 bytes Memory after 71504 bytes Memory used: 2128 bytes
+Memory usage (HeapAlloc) after Test Case i 0, : 71504 bytes
 ===============
-Test count  1 for node {[]
+Test count  1 for node {[] 
       [[""]]
 
             }
 Solution 1: StraightForward
 >Solution result [[]]
-Correct result is
+Correct result is  
       [[""]]
 
-
-TimeLapse 2.352µs
+            
+TimeLapse 3.148µs
+Memory before 69376 bytes Memory after 71760 bytes Memory used: 2384 bytes
+Memory usage (HeapAlloc) after Test Case i 1, : 71760 bytes
 ===============
-Test count  2 for node {[a]
+Test count  2 for node {[a] 
       [["a"]]
 
             }
 Solution 1: StraightForward
 >Solution result [[a]]
-Correct result is
+Correct result is  
       [["a"]]
 
-
-TimeLapse 2µs
+            
+TimeLapse 3.092µs
+Memory before 69376 bytes Memory after 72032 bytes Memory used: 2656 bytes
+Memory usage (HeapAlloc) after Test Case i 2, : 72032 bytes
 ===============
-TimeLapse Whole Program 404.528µs
+TimeLapse Whole Program 919.038µs
+
+
 */
 //REF
 //
