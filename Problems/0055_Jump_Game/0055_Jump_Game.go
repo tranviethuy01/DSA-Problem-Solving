@@ -41,6 +41,35 @@ func max(a, b int) int {
 	return b
 }
 
+//approach another leetcode solution
+/*
+Adapt code here
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        gas = 0
+        for n in nums:
+            if gas < 0:
+                return False
+            elif n > gas:
+                gas = n
+            gas -= 1
+
+        return True
+
+*/
+func canJump_Approach2(nums []int) bool {
+	gas := 0
+	for _, n := range nums {
+		if gas < 0 {
+			return false
+		} else if n > gas {
+			gas = n
+		}
+		gas--
+	}
+	return true
+}
+
 func main() {
 	timeStartWholeProgram := time.Now()
 
@@ -66,6 +95,14 @@ false
 		timeStart := time.Now()
 		result := canJump_LinearScan(value.Nums)
 		timeLapse := time.Since(timeStart)
+		fmt.Println(">Solution result", result)
+		fmt.Println("Correct result is ", value.Result)
+		fmt.Println("TimeLapse", timeLapse)
+
+		fmt.Println("Solution 2: Another code")
+		timeStart = time.Now()
+		result = canJump_Approach2(value.Nums)
+		timeLapse = time.Since(timeStart)
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
 		fmt.Println("TimeLapse", timeLapse)
@@ -98,7 +135,13 @@ maxReach >= n-1 4 4 should reach
 Correct result is
 true
 
-TimeLapse 53.147µs
+TimeLapse 47.536µs
+Solution 2: Another code
+>Solution result true
+Correct result is
+true
+
+TimeLapse 352ns
 ===============
 Test count  1 for node {[3 2 1 0 4]
 false
@@ -118,9 +161,15 @@ i > maxReach 4 3 should be false
 Correct result is
 false
 
-TimeLapse 100.202µs
+TimeLapse 88.573µs
+Solution 2: Another code
+>Solution result false
+Correct result is
+false
+
+TimeLapse 111ns
 ===============
-TimeLapse Whole Program 546.878µs
+TimeLapse Whole Program 544.53µs
 
 */
 //REF
