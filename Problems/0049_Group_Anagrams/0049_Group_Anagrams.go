@@ -6,6 +6,17 @@ import (
 	"time"
 )
 
+/*
+We iterate through each word in the input array once, which takes O(n) time, where n is the total number of characters in all the words.
+For each word, we sort the characters, which takes O(k log k) time, where k is the length of the longest word.
+Since there are n words, the total time complexity for sorting all the words is O(n * k log k).
+We store the sorted words in a hashmap. The space complexity for this hashmap is O(n * k), where n is the number of words and k is the length of the longest word.
+We then iterate through the hashmap to collect the anagram groups, which takes O(n) time.
+Considering the above analysis, the overall time complexity of the algorithm is O(n * k log k) due to the sorting operation, and the space complexity is O(n * k) due to the hashmap.
+
+
+*/
+
 func groupAnagrams(strs []string) [][]string {
 	// Create a map to store anagrams
 	anagrams := make(map[string][]string)
@@ -43,38 +54,33 @@ func main() {
 
 	testInput := []TestCase{
 		{
-      S: []string{"eat","tea","tan","ate","nat","bat"},
+			S: []string{"eat", "tea", "tan", "ate", "nat", "bat"},
 			Result: `
 [["bat"],["nat","tan"],["ate","eat","tea"]]
 
             `,
 		},
-	{
-      S: []string{""},
+		{
+			S: []string{""},
 			Result: `
       [[""]]
 
             `,
 		},
-	{
-      S: []string{"a"},
+		{
+			S: []string{"a"},
 			Result: `
       [["a"]]
 
             `,
 		},
-
-
-
-		
-
-  }
+	}
 	for count, value := range testInput {
 		fmt.Println("===============")
 		fmt.Println("Test count ", count, "for node", value)
 		fmt.Println("Solution 1: StraightForward")
 		timeStart := time.Now()
-    result := groupAnagrams(value.S)
+		result := groupAnagrams(value.S)
 		timeLapse := time.Since(timeStart)
 		fmt.Println(">Solution result", result)
 		fmt.Println("Correct result is ", value.Result)
@@ -88,7 +94,7 @@ func main() {
 }
 
 type TestCase struct {
-	S []string
+	S      []string
 	Result string
 }
 
@@ -96,40 +102,40 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {[eat tea tan ate nat bat] 
+Test count  0 for node {[eat tea tan ate nat bat]
 [["bat"],["nat","tan"],["ate","eat","tea"]]
 
             }
 Solution 1: StraightForward
 >Solution result [[tan nat] [bat] [eat tea ate]]
-Correct result is  
+Correct result is
 [["bat"],["nat","tan"],["ate","eat","tea"]]
 
-            
+
 TimeLapse 22.815µs
 ===============
-Test count  1 for node {[] 
+Test count  1 for node {[]
       [[""]]
 
             }
 Solution 1: StraightForward
 >Solution result [[]]
-Correct result is  
+Correct result is
       [[""]]
 
-            
+
 TimeLapse 2.352µs
 ===============
-Test count  2 for node {[a] 
+Test count  2 for node {[a]
       [["a"]]
 
             }
 Solution 1: StraightForward
 >Solution result [[a]]
-Correct result is  
+Correct result is
       [["a"]]
 
-            
+
 TimeLapse 2µs
 ===============
 TimeLapse Whole Program 404.528µs
