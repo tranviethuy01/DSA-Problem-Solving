@@ -184,96 +184,96 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {2 10 
+Test count  0 for node {2 10
       1024.00000
             }
 Solution 1: StraightForward
 >Solution result 1024
-Correct result is  
+Correct result is
       1024.00000
-            
+
 TimeLapse 648ns
 Memory before 67184 bytes Memory after 68104 bytes Memory used: 920 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 68104 bytes
 Solution 2: Binary exponentiation
 >Solution result 1024
-Correct result is  
+Correct result is
       1024.00000
-            
+
 TimeLapse 945ns
 Memory before 67184 bytes Memory after 68312 bytes Memory used: 1128 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 68312 bytes
-Solution 3: Linear, Iterative 
+Solution 3: Linear, Iterative
 >Solution result 1024
-Correct result is  
+Correct result is
       1024.00000
-            
+
 TimeLapse 593ns
 Memory before 67184 bytes Memory after 68392 bytes Memory used: 1208 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 68392 bytes
 ===============
-Test count  1 for node {2.1 3 
+Test count  1 for node {2.1 3
 9.26100
 
             }
 Solution 1: StraightForward
 >Solution result 9.261000000000001
-Correct result is  
+Correct result is
 9.26100
 
-            
+
 TimeLapse 185ns
 Memory before 67184 bytes Memory after 68488 bytes Memory used: 1304 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 68488 bytes
 Solution 2: Binary exponentiation
 >Solution result 9.261000000000001
-Correct result is  
+Correct result is
 9.26100
 
-            
+
 TimeLapse 445ns
 Memory before 67184 bytes Memory after 68568 bytes Memory used: 1384 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 68568 bytes
-Solution 3: Linear, Iterative 
+Solution 3: Linear, Iterative
 >Solution result 9.261000000000001
-Correct result is  
+Correct result is
 9.26100
 
-            
+
 TimeLapse 185ns
 Memory before 67184 bytes Memory after 68632 bytes Memory used: 1448 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 68632 bytes
 ===============
-Test count  2 for node {2 -2 
+Test count  2 for node {2 -2
       0.25000
             }
 Solution 1: StraightForward
 >Solution result 0.25
-Correct result is  
+Correct result is
       0.25000
-            
+
 TimeLapse 296ns
 Memory before 67184 bytes Memory after 68744 bytes Memory used: 1560 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 68744 bytes
 Solution 2: Binary exponentiation
 >Solution result 0.25
-Correct result is  
+Correct result is
       0.25000
-            
+
 TimeLapse 315ns
 Memory before 67184 bytes Memory after 68824 bytes Memory used: 1640 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 68824 bytes
-Solution 3: Linear, Iterative 
+Solution 3: Linear, Iterative
 >Solution result 0.25
-Correct result is  
+Correct result is
       0.25000
-            
+
 TimeLapse 203ns
 Memory before 67184 bytes Memory after 68888 bytes Memory used: 1704 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 68888 bytes
 ===============
 TimeLapse Whole Program 1.684732ms
 
- */
+*/
 //REF
 //
