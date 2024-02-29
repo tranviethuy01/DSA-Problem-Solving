@@ -191,62 +191,62 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {2 [3] 
+Test count  0 for node {2 [3]
       8
             }
 Solution 1: modular exponentiation
 >Solution result 8
-Correct result is  
+Correct result is
       8
-            
+
 TimeLapse 852ns
 Memory before 69104 bytes Memory after 70040 bytes Memory used: 936 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 70040 bytes
 Solution 2: Euler
 >Solution result 8
-Correct result is  
+Correct result is
       8
-            
+
 TimeLapse 796ns
 Memory before 69104 bytes Memory after 70232 bytes Memory used: 1128 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 70232 bytes
 ===============
-Test count  1 for node {2 [1 0] 
+Test count  1 for node {2 [1 0]
       1024
             }
 Solution 1: modular exponentiation
 >Solution result 1024
-Correct result is  
+Correct result is
       1024
-            
+
 TimeLapse 444ns
 Memory before 69104 bytes Memory after 70376 bytes Memory used: 1272 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 70376 bytes
 Solution 2: Euler
 >Solution result 1024
-Correct result is  
+Correct result is
       1024
-            
+
 TimeLapse 260ns
 Memory before 69104 bytes Memory after 70456 bytes Memory used: 1352 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 70456 bytes
 ===============
-Test count  2 for node {1 [4 3 3 8 5 2] 
+Test count  2 for node {1 [4 3 3 8 5 2]
       1
             }
 Solution 1: modular exponentiation
 >Solution result 1
-Correct result is  
+Correct result is
       1
-            
+
 TimeLapse 1.13µs
 Memory before 69104 bytes Memory after 70616 bytes Memory used: 1512 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 70616 bytes
 Solution 2: Euler
 >Solution result 1
-Correct result is  
+Correct result is
       1
-            
+
 TimeLapse 389ns
 Memory before 69104 bytes Memory after 70680 bytes Memory used: 1576 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 70680 bytes
@@ -254,6 +254,6 @@ Memory usage (HeapAlloc) after Test Case i 2, : 70680 bytes
 TimeLapse Whole Program 1.004164ms
 
 
- */
+*/
 //REF
 //
