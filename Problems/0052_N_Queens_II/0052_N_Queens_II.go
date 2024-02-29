@@ -189,7 +189,7 @@ func copyBoard(board [][]byte, n int) [][]byte {
 /*
 Time Complexity:
 Precomputation Step: In the precomputation step, we iterate over i from 1 to n, where n is the size of the chessboard. For each i, we solve the N-Queens problem on an i x i board. The time complexity for solving each subproblem is similar to the backtracking approach and can be approximated as O(i!).
-Total Time Complexity: The total time complexity is the sum of solving each subproblem. Therefore, the overall time complexity can be approximated as the sum of the factorial of each number from 1 to n, i.e., 
+Total Time Complexity: The total time complexity is the sum of solving each subproblem. Therefore, the overall time complexity can be approximated as the sum of the factorial of each number from 1 to n, i.e.,
 O(1!)+O(2!)+O(3!)+…+O(n!).
 
 Space Complexity:
@@ -198,7 +198,7 @@ For each subproblem, we also use a chessboard representation (board), columns ar
 Total Space Complexity: Considering all the above factors, the total space complexity is O(n) (for dp) + O(n) (for board, cols, diag1, and diag2) = O(n).
 
 
- */
+*/
 
 func totalNQueens_DP(n int) int {
 	if n <= 0 {
