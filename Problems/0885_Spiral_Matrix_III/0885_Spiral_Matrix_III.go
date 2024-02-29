@@ -123,26 +123,24 @@ func main() {
 
 	testInput := []TestCase{
 		{
-Rows: 1,
-Cols: 4,
-RStart: 0,
-CStart: 0,
+			Rows:   1,
+			Cols:   4,
+			RStart: 0,
+			CStart: 0,
 			Result: `
 [[0,0],[0,1],[0,2],[0,3]]
 
             `,
 		},
 		{
-Rows: 5,
-Cols: 6,
-RStart: 1,
-CStart: 4,
+			Rows:   5,
+			Cols:   6,
+			RStart: 1,
+			CStart: 4,
 			Result: `
 [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]
             `,
 		},
-	
-
 	}
 
 	// Memory before allocation
@@ -169,12 +167,12 @@ CStart: 4,
 		fmt.Printf("Memory usage (HeapAlloc) after Test Case i %d, : %v bytes\n", count, m.HeapAlloc)
 
 		fmt.Println("Solution 2: StraightForward => time limit Exceeded => need to check code again")
-//		timeStart = time.Now()
-//		result = spiralMatrixIII_StraightForward(value.Rows, value.Cols, value.RStart, value.CStart)
-//		timeLapse = time.Since(timeStart)
-//		fmt.Println(">Solution result", result)
-//		fmt.Println("Correct result is ", value.Result)
-//		fmt.Println("TimeLapse", timeLapse)
+		//		timeStart = time.Now()
+		//		result = spiralMatrixIII_StraightForward(value.Rows, value.Cols, value.RStart, value.CStart)
+		//		timeLapse = time.Since(timeStart)
+		//		fmt.Println(">Solution result", result)
+		//		fmt.Println("Correct result is ", value.Result)
+		//		fmt.Println("TimeLapse", timeLapse)
 
 		// Memory after allocation
 		runtime.ReadMemStats(&m)
@@ -202,43 +200,43 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {1 4 0 0 
+Test count  0 for node {1 4 0 0
 [[0,0],[0,1],[0,2],[0,3]]
 
             }
 Solution 1: adapt solution from leetcode
 >Solution result [[0 0] [0 1] [0 2] [0 3]]
-Correct result is  
+Correct result is
 [[0,0],[0,1],[0,2],[0,3]]
 
-            
+
 TimeLapse 5.499µs
 Memory before 69040 bytes Memory after 70392 bytes Memory used: 1352 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 70392 bytes
-Solution 2: StraightForward => time limit Exceeded 
+Solution 2: StraightForward => time limit Exceeded
 >Solution result [[0 0] [0 1] [0 2] [0 3]]
-Correct result is  
+Correct result is
 [[0,0],[0,1],[0,2],[0,3]]
 
-            
+
 TimeLapse 3.296µs
 Memory before 69040 bytes Memory after 70800 bytes Memory used: 1760 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 70800 bytes
 ===============
-Test count  1 for node {5 6 1 4 
+Test count  1 for node {5 6 1 4
 [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]
             }
 Solution 1: adapt solution from leetcode
 >Solution result [[1 4] [1 5] [2 5] [2 4] [2 3] [1 3] [0 3] [0 4] [0 5] [3 5] [3 4] [3 3] [3 2] [2 2] [1 2] [0 2] [4 5] [4 4] [4 3] [4 2] [4 1] [3 1] [2 1] [1 1] [0 1] [4 0] [3 0] [2 0] [1 0] [0 0]]
-Correct result is  
+Correct result is
 [[1,4],[1,5],[2,5],[2,4],[2,3],[1,3],[0,3],[0,4],[0,5],[3,5],[3,4],[3,3],[3,2],[2,2],[1,2],[0,2],[4,5],[4,4],[4,3],[4,2],[4,1],[3,1],[2,1],[1,1],[0,1],[4,0],[3,0],[2,0],[1,0],[0,0]]
-            
+
 TimeLapse 27.351µs
 Memory before 69040 bytes Memory after 74384 bytes Memory used: 5344 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 74384 bytes
-Solution 2: StraightForward => time limit Exceeded 
+Solution 2: StraightForward => time limit Exceeded
 
 
- */
+*/
 //REF
 //

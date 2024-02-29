@@ -114,34 +114,34 @@ type TestCase struct {
 /*
 
 ===============
-Test count  0 for node {3 
+Test count  0 for node {3
 [[1,2,3],[8,9,4],[7,6,5]]
             }
 Solution 1: StraightForward | Brute Force Solution
 >Solution result [[1 2 3] [8 9 4] [7 6 5]]
-Correct result is  
+Correct result is
 [[1,2,3],[8,9,4],[7,6,5]]
-            
+
 TimeLapse 3.778µs
 Memory before 69248 bytes Memory after 70488 bytes Memory used: 1240 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 70488 bytes
 ===============
-Test count  1 for node {1 
+Test count  1 for node {1
 [[1]]
 
             }
 Solution 1: StraightForward | Brute Force Solution
 >Solution result [[1]]
-Correct result is  
+Correct result is
 [[1]]
 
-            
+
 TimeLapse 833ns
 Memory before 69248 bytes Memory after 70664 bytes Memory used: 1416 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 70664 bytes
 ===============
 TimeLapse Whole Program 820.035µs
 
- */
+*/
 //REF
 //
