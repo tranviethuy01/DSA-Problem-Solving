@@ -7,7 +7,7 @@ import (
 )
 
 //
-//approach : StraightForward  => this solution is a bad one, time limit Exceeded
+//approach : StraightForward  => this solution is a bad one, time limit Exceeded => look like it loop forever, need check code again
 /*
 
 Time Complexity:
