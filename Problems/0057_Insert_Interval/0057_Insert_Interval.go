@@ -18,20 +18,20 @@ func insert_LinearScan(intervals [][]int, newInterval []int) [][]int {
 	result := [][]int{}
 	merged := newInterval
 	for _, interval := range intervals {
-    fmt.Println("interval" , interval, "merged", merged)
+		fmt.Println("interval", interval, "merged", merged)
 		if interval[1] < merged[0] {
-      fmt.Println("intervals[1] < merged[0], need append to result")
+			fmt.Println("intervals[1] < merged[0], need append to result")
 			result = append(result, interval)
 		} else if interval[0] > merged[1] {
-      fmt.Println("intervals[0] > merged[1], need append to result, and change merged = interval")
+			fmt.Println("intervals[0] > merged[1], need append to result, and change merged = interval")
 			result = append(result, merged)
 			merged = interval
 		} else {
-      fmt.Println("need re calculate value of merged")
-      fmt.Println("merged before", merged)
+			fmt.Println("need re calculate value of merged")
+			fmt.Println("merged before", merged)
 			merged[0] = min(merged[0], interval[0])
 			merged[1] = max(merged[1], interval[1])
-      fmt.Println("merged after", merged)
+			fmt.Println("merged after", merged)
 
 		}
 	}
@@ -130,8 +130,8 @@ func main() {
 
             `,
 		},
-	{
-			Intervals:   [][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}, { 17, 20 }, {25, 30}},
+		{
+			Intervals:   [][]int{{1, 2}, {3, 5}, {6, 7}, {8, 10}, {12, 16}, {17, 20}, {25, 30}},
 			NewInterval: []int{4, 8},
 			Result: `
 [[1,2],[3,10],[12,16] , [17,20], [25,30]]
@@ -139,7 +139,6 @@ func main() {
 
             `,
 		},
-
 	}
 
 	// Memory before allocation
@@ -197,7 +196,7 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {[[1 3] [6 9]] [2 5] 
+Test count  0 for node {[[1 3] [6 9]] [2 5]
 [[1,5],[6,9]]
 
 
@@ -210,26 +209,26 @@ merged after [1 5]
 interval [6 9] merged [1 5]
 intervals[0] > merged[1], need append to result, and change merged = interval
 >Solution result [[1 5] [6 9]]
-Correct result is  
+Correct result is
 [[1,5],[6,9]]
 
 
-            
+
 TimeLapse 67.203µs
 Memory before 69664 bytes Memory after 71256 bytes Memory used: 1592 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 71256 bytes
-Solution 2: try to use Binary Search, but still O(n) 
+Solution 2: try to use Binary Search, but still O(n)
 >Solution result [[1 5] [6 9]]
-Correct result is  
+Correct result is
 [[1,5],[6,9]]
 
 
-            
+
 TimeLapse 5.389µs
 Memory before 69664 bytes Memory after 71640 bytes Memory used: 1976 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 71640 bytes
 ===============
-Test count  1 for node {[[1 2] [3 5] [6 7] [8 10] [12 16]] [4 8] 
+Test count  1 for node {[[1 2] [3 5] [6 7] [8 10] [12 16]] [4 8]
 [[1,2],[3,10],[12,16]]
 
             }
@@ -251,24 +250,24 @@ merged after [3 10]
 interval [12 16] merged [3 10]
 intervals[0] > merged[1], need append to result, and change merged = interval
 >Solution result [[1 2] [3 10] [12 16]]
-Correct result is  
+Correct result is
 [[1,2],[3,10],[12,16]]
 
-            
+
 TimeLapse 166.054µs
 Memory before 69664 bytes Memory after 72952 bytes Memory used: 3288 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 72952 bytes
-Solution 2: try to use Binary Search, but still O(n) 
+Solution 2: try to use Binary Search, but still O(n)
 >Solution result [[1 2] [3 10] [12 16]]
-Correct result is  
+Correct result is
 [[1,2],[3,10],[12,16]]
 
-            
+
 TimeLapse 16.425µs
 Memory before 69664 bytes Memory after 73680 bytes Memory used: 4016 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 73680 bytes
 ===============
-Test count  2 for node {[[1 2] [3 5] [6 7] [8 10] [12 16] [17 20] [25 30]] [4 8] 
+Test count  2 for node {[[1 2] [3 5] [6 7] [8 10] [12 16] [17 20] [25 30]] [4 8]
 [[1,2],[3,10],[12,16] , [17,20], [25,30]]
 
 
@@ -295,21 +294,21 @@ intervals[0] > merged[1], need append to result, and change merged = interval
 interval [25 30] merged [17 20]
 intervals[0] > merged[1], need append to result, and change merged = interval
 >Solution result [[1 2] [3 10] [12 16] [17 20] [25 30]]
-Correct result is  
+Correct result is
 [[1,2],[3,10],[12,16] , [17,20], [25,30]]
 
 
-            
+
 TimeLapse 214.589µs
 Memory before 69664 bytes Memory after 75760 bytes Memory used: 6096 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 75760 bytes
-Solution 2: try to use Binary Search, but still O(n) 
+Solution 2: try to use Binary Search, but still O(n)
 >Solution result [[1 2] [3 10] [12 16] [17 20] [25 30]]
-Correct result is  
+Correct result is
 [[1,2],[3,10],[12,16] , [17,20], [25,30]]
 
 
-            
+
 TimeLapse 16.944µs
 Memory before 69664 bytes Memory after 76920 bytes Memory used: 7256 bytes
 Memory usage (HeapAlloc) after Test Case i 2, : 76920 bytes
