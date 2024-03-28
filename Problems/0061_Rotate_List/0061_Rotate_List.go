@@ -116,32 +116,32 @@ type TestCase struct {
 
 
 ===============
-Test count  0 for node {{1 0x4000010250} 2 
+Test count  0 for node {{1 0x4000010250} 2
   [4,5,1,2,3]
 
             }
 Solution 1: rotateRight
 >Solution result &{4 0x4000010280}
-Correct result is  
+Correct result is
   [4,5,1,2,3]
 
-            
-4 5 1 2 3 
+
+4 5 1 2 3
 TimeLapse 834ns
 Memory before 69112 bytes Memory after 70240 bytes Memory used: 1128 bytes
 Memory usage (HeapAlloc) after Test Case i 0, : 70240 bytes
 ===============
-Test count  1 for node {{0 0x4000010290} 4 
+Test count  1 for node {{0 0x4000010290} 4
 [2,0,1]
 
             }
 Solution 1: rotateRight
 >Solution result &{2 0x4000072150}
-Correct result is  
+Correct result is
 [2,0,1]
 
-            
-2 0 1 
+
+2 0 1
 TimeLapse 204ns
 Memory before 69112 bytes Memory after 70368 bytes Memory used: 1256 bytes
 Memory usage (HeapAlloc) after Test Case i 1, : 70368 bytes
@@ -149,5 +149,5 @@ Memory usage (HeapAlloc) after Test Case i 1, : 70368 bytes
 TimeLapse Whole Program 792.625µs
 
 
- */
+*/
 //REF

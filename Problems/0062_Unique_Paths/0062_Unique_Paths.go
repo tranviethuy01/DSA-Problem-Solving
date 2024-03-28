@@ -59,8 +59,8 @@ func dfs(row, col, m, n int, count *int) {
 	}
 }
 
-
 //approach BFS => this solution go wrong, need check again
+//In this implementation, we use a queue to perform BFS traversal. We start from the top-left corner and explore all possible movements (right or down) level by level until we reach the bottom-right corner. We keep track of visited cells to avoid revisiting them. If the destination is reached, we return 1, indicating that there's at least one path from the top-left corner to the bottom-right corner. If the queue becomes empty without reaching the destination, it implies there's no valid path, so we return 0.
 
 func uniquePaths_BFS(m int, n int) int {
 	// Create a queue for BFS
